@@ -1,0 +1,137 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,600;0,700;1,700&display=swap');
+
+  body{
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .flexbox-Contenedor_header1{
+    display: flex;
+    padding: 2%;
+    flex-direction:row;
+    border-style: dashed;
+    text-align: center;
+}
+
+.flexbox-Contenedor_header2{
+  display: flex;
+  padding: 3%;
+  flex-direction: row;
+  border-style: dashed;
+  text-align: center;
+  width: 50%;
+  justify-content: center;
+}
+
+.flexbox-Subcontenedor_header{
+  display: flex;
+  padding: 3%;
+  flex-direction: row;
+  border-style: dashed;
+}
+
+.flexbox-item{
+  border-style: solid;
+  text-align: center;
+
+}
+
+#logo{
+  border-style: solid;
+  text-align: center;
+  width:16%;
+  flex: 5;
+}
+
+#idiomas{
+  /*flex: 5;*/
+  border-style: solid;
+  text-align: center;
+  width:50%;
+}
+
+#acceso{
+  /*flex: 5;*/
+  border-style: solid;
+  text-align: center;
+  width:25%;
+}
+
+#menú{
+  /*flex: 5;*/
+  display: flex;
+  border-style: solid;
+  text-align: center;
+  justify-content: center;
+  width: 34%;
+}
+
+
+.subContenido{
+  display: flex;
+  padding: 3%;
+  height: 250px;
+  flex-direction: row;
+  border-style: dashed;
+  align-items:center;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.flexbox-container1-style{
+  display: flex;
+  padding: 1px;
+  height: 500px;
+  flex-direction: column;
+  border-style: dashed;
+  align-items:center;
+  /* justify-content:space-around; */
+  flex-wrap: wrap;
+  background-color: #2f455d;
+  color: #D2D3D5;
+  border-color: #2f455d;
+  text-align: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.flexbox-sub-container{
+  display: flex;
+  padding: 2%;
+
+}
+
+.style-div{
+  border-style: double;
+}
+
+#foto{
+  display:flex;
+  border-style:dashed;
+  padding:10px;
+  width: 500px;
+  flex-direction: row;
+  text-align: center;
+  background-color: aliceblue;
+  align-items: center;
+  text-align: center;
+  justify-content:space-around;
+}
+.flexbox-container-style{
+  display: flex;
+  padding: 3%;
+  height: 2000px;
+  flex-direction: row;
+  border-style: dashed;
+  align-items:center;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  background-color: #ecedea
+}
+.flexbox-second{
+  border-style:double;
+  text-align: center;
+  width: 400px;
+  padding: 10px;
+  background-color: rgb(252, 254, 255);
+}
