@@ -117,10 +117,10 @@
   text-align: center;
   justify-content:space-around;
 }
-.flexbox-container-style{
+.flexbox-container2-style{
   display: flex;
   padding: 3%;
-  height: 2000px;
+  height: 2500px;
   flex-direction: row;
   border-style: dashed;
   align-items:center;
@@ -134,4 +134,16 @@
   width: 400px;
   padding: 10px;
   background-color: rgb(252, 254, 255);
+}
+
+.flexbox-third{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-style:none;
+  text-align: center;
+  width: 400px;
+  padding: 10px;
+  background-color: rgb(252, 254, 255);
+  justify-content: center;
 }
