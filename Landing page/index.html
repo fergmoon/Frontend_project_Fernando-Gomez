@@ -5,108 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIMENZIONAR DISEÑO SAS</title>
-        <!-- <link rel="stylesheet" href="./css/normalize.css"> -->
-        <link rel="stylesheet" type="text/css" href="./css/Styles.css">
+    <link rel="stylesheet" type="text/css" href="css/Styles.css">    
 
-</head>
-<body>
-    <header>
-        <!-- <h1>Bienvenido a mi sitio web</h1> -->
-        <nav>
-            <div class="flexbox-Contenedor_header1">
-                <div id="logo" >Logo</div>
-                <div id="idiomas" >Idiomas</div>
-                <!-- <div id="acceso" >Acceso</div> -->
-                <ul id="menú">  
-                    <li><a href="#Home">HOME</a></li>
-                    <li><a href="#quienes_somos">QUIENES SOMOS</a></li>
-                    <li><a href="#proyectos">PROYECTOS</a></li>
-                    <li><a href="#proyectos">CONTACTO</a></li>
-                    <li><a href="#tienda">TIENDA</a></li>
-                </ul>
-            </div>
-           </nav>
-           <br>
-            <div class="flexbox-container1-style">
-                <h1>PROYECTOS</h1>
-                <img height="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg"> 
-            </div>
-            <!-- <div class="flexbox-container3-style">
-                <div >
-                    <div id="foto" >   
-                        <img height="200px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                        <p id="pie_foto">Lorem ipsum dolor</p> 
-                    </div>
-                    <div id="foto" >   
-                        <img height="200px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                        <p id="pie_foto">Lorem ipsum dolor </p> 
-                    </div>
-                </div>
-            </div> -->
-            <div class="flexbox-container2-style">
-                <div class="flexbox-second">1
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">2
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">3
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">4
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">5
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">6
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">7
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>                
-                <div class="flexbox-second">8
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">9
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">10
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">11
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div class="flexbox-second">12
-                    <img width="400px" width="300px" src="https://lageografia.com/wp-content/uploads/galaxia.jpg">
-                    <p id="pie_foto">Lorem ipsum dolor</p> 
-                </div>
-                <div>
-                    <nav class="flexbox-container2-style">
-                        <p class="flexbox-item">1</p>
-                        <p class="flexbox-item">2</p>
-                        <p class="flexbox-item">3</p>
-                        <p class="flexbox-item">4</p>
-                    </nav>
-                </div>
-
-            </div>
-           </div>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="logo">
+        <img src="logo.png" alt="LOGO">
+      </div>
+      <div class="language-selector">
+        <img src="es.png" alt="Español" class="language-option">
+        <img src="en.png" alt="Inglés" class="language-option">
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
+      <nav class="navigation">
+        <a href="#">Inicio</a>
+        <a href="#">Productos</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+      </nav>
     </header>
-    <footer>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, at.</p>
-    </footer>
+  
+    <div class="container">
+      <div class="caja1">
+        <div class="ale1">
+          <p class="linea1">ESPACIO. ESTILO. SENSACIÓN. USTED.</p>
+          <p class="linea2">Permítanos crear algo maravilloso:<br>
+          un diseño que es<br>
+        todo para usted.</p>
+        </div>
+      </div>
+    </div>
+    <div class="second-container">
+      <div class="inner-container">
+        <div class="franja-fotos-container">
+          <div class="caja-foto1"></div>
+          <div class="caja-foto2"></div>
+          <div class="caja-foto3"></div>
+        </div>
+        <h2 class="texto-hacemos">Que hacemos...</h2>
+        <div class="small-container"><p class="small-text">
+          Nuestro equipo de diseño
+        trabaja codo con codo con la producción,
+        y esta sinergia orgánica permite la creación
+        de diseños innovadores.</p>
+      </div>              
+      </div>            
+    </div>
+    <div class="third-container">
+      <h3>Tercer Contenedor</h3>
+      <div class="inner-container2">
+        <div class="sub-container">
+          <p>Contenido del subcontenedor</p>
+        </div>
+      </div>
+      <p>Contenido acondicionado por conceptos responsive mediante flexbox.</p>
+    </div>
+   
+    <div class="fourth-container">
+  <h3>Cuarto Contenedor</h3>
+  <p>Contenido acondicionado por conceptos responsive mediante flexbox.</p>
+</div>
+  
     
-</body>
-</html>
+
+
+
+      
+      <footer>
+        <!-- Código del pie de página -->
+      </footer>
+      
+    </div>
+  </body>
+  </html>
