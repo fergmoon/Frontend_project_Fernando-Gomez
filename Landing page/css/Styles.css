@@ -232,7 +232,7 @@ margin-left: 2%;
 
 .third-container {     /*contenedor rejilla-TODO*/
   display: flex;
-  background-color: rgb(237, 138, 138);
+  background-color: rgb(255, 255, 255);
   height: 1000px;
   width: 100vw;
   display: flex;
@@ -242,25 +242,47 @@ margin-left: 2%;
   text-align: center;
   padding: 20px;
   position: relative;
+  overflow: hidden;
+
 }
 
-.inner-container2 {   /*contenedor rejilla-exterior*/
-  background-color: #808080;
-  width: 55%;    
-  height: 85%;
+.inner-container2 {   /*contenedor rejilla-exterior Fondo*/
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
+  width: 45%;    
+  height: 65%;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
 }
 
-.sub-container {   /*contenedor rejilla*/
-  background-color: #cccccc;
-  width: 80%;
-  height: 80%;
+.sub-container {   /* rejilla*/
+  display: flex;
+  flex-wrap: wrap;
+  width:90%;
+  height:90%;
+  color: #1e1e1e;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.square {
+  width: 33.33%;
+  height: 33.33%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.square:nth-child(even) {    /*colors 1 chess*/
+  background-color: #ffffff;
+}
+
+.square:nth-child(odd) {     /*colors 2 chess*/
+  background-color: #c0c0c0;
 }
 
 .fourth-container {
