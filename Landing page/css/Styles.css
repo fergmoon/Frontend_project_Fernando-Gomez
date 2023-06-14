@@ -132,7 +132,7 @@ header {
   align-items: flex-start;
   justify-content: flex-end;
   min-height: 100vh;
-  background-image: url("/images/1-r-architecture-rOk4VSMS3Ck-unsplash.jpg");
+  background-image: url("./images/1-r-architecture-rOk4VSMS3Ck-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
