@@ -2,118 +2,252 @@ body {
   background: black;
   font-family: 'PT Sans',sans-serif;
   margin: 0;
+  /* background-color:#000000; */
+  /* font-family: ''; */
+  font-weight: bold;
+  font-size: 20px;
+  }
 
+/*=========Menú hamburguesa =============*/
+*, 
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
-/*=========Menú hamburguesa=============*/
-#menu{   /*Contenedor del menú*/
-	width: 35px;
-	height: 30px;
-  margin: 30px 50px 20px 20px;
-	cursor: pointer;
 
+:root {
+  --color0: #fff;
+  --color1: #F25CA2;
+  --color2: #0433BF;
+  --color3: #032CA6;
+  --color4: #021859;
+  --color5: #0B9ED9;
+  --color6: #000;
 }
-.bar{    /*lineas Naranja*/
-	height: 5px;
-	width: 100%;
-	background-color: orange;
-	display: block;
-	border-radius: 5px;
-	transition: 0.5s ease;   /*velocidad mov barras*/
-}
-#bar1{      /*barra sup*/
-	transform: translateY(-4px);
 
+html {
+  font-size: 10px;
+  box-sizing: border-box;
 }
-#bar3{       /*barra inf*/
-	transform: translateY(4px);
+/* 
 
-}
-.nav li a{
-	color: #fff;
-	text-decoration: none;
+header {
+  width: 100%;
+  background-color: var(--color4);
+} */
 
+.container-menu{
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
-.nav li a:hover{   /*texto menu desplegado fuente*/
-	font-weight: bold;
-}
-.nav li{    /*Separación texto desplegado*/
-	list-style: none;
-	padding: 16px 0;
-}
-.nav{   /*textos menú*/
-	padding: 0;
-	margin: 0 20px;  /*distancia cruz menú*/
-	transition: 0.3s ease;
-	display: none;
-}
-.menu-bg, #menu-bar{
-	top: 0;
-	right: 20;
-	position: absolute;
-  margin-top: 10px;
 
+nav {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.menu-bg{  /*Circulo del menú*/
-	z-index: 1;
-	width: 0;
-	height: 0;
-	margin: 30px -680px 20px 0px;
-	background: radial-gradient(circle, orange, orange);
-	border-radius: 50%;
-	transition: 0.3s ease; /*velocidad circulo*/
+
+.navbar-brand {
+  background-color: var(--color2);
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  border-radius: 50%;
+}
+
+.navbar-brand i {
+  font-size: 4rem;
+  color:var(--color0);
+  margin: auto;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: block;
+  margin: 0 2rem;
+  color: var(--color0);
+  text-transform: capitalize;
+  transform: scale(0);
+  transition: transform 650ms;
+}
+
+.nav-item {
+  position: relative;
+  line-height: 8rem;
+  transition-delay: .4s;
+  visibility: hidden;
+}
+
+.nav-item::before {
+  content: '';
   position: absolute;
-
-  right:0; /* Agregado para mover el menú hacia la derecha */
+  width: 100%;
+  height: 2px;
+  background-color: var(--color1);
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 650ms cubic-bezier(.68, -.55, .265, 1.55);
 }
-#menu-bar{
-	z-index: 2;
+
+.nav-item:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+} 
+
+/* Hamburger Menu */
+.hamburger {
+  width: 3.6rem;
+  height: 1.8rem;
+  position: relative;
+  cursor: pointer;
+  line-height: 5rem;
+  z-index: 1500;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color0);
   position: absolute;
+  display: block;
+  right: 0;
+  transition: all 650ms;
+}
+
+.hamburger .line:nth-child(1) {
   top: 0;
-  right: 20px; /* Agregado para mover el menú hacia la derecha */
 }
-.change-bg{
-	width: 550px;
-	height: 540px;
-	transform: translate(-60%,-30%);
+
+.hamburger .line:nth-child(2) {
+  top: 50%;
+  margin-top: -1px;
+  width: 2.8rem;
 }
-.change .bar{
-	background-color: white;
+
+.hamburger .line:nth-child(3) {
+  top: 100%;
+  margin-top: -2px;
+  width: 2rem;
 }
-.change #bar1{
-	transform: translateY(4px) rotateZ(-45deg);
+
+.hamburger.active .line:nth-child(1) {
+  transform: translateY(.8rem) rotate(45deg);
+  width: 2rem;
 }
-.change #bar3{
-	transform: translateY(-6px) rotate(45deg);
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
 }
-.change #bar2{
-	opacity: 0;
+
+.hamburger.active .line:nth-child(3) {
+  transform: translateY(-.8rem) rotate(-45deg);
+  width: 2rem;
 }
-.change{
-	display: block;
+
+
+.nav-list.active .nav-link {
+  transform: scale(1);
 }
-/*=========Menú hamburguesa=============*/
+
+.nav-list.active .nav-item {
+  transition-delay: initial;
+  visibility: visible;
+}
+
+.nav-list.active .nav-item:nth-child(1) .nav-link {
+  transition-delay: .5s;
+}
+
+.nav-list.active .nav-item:nth-child(2) .nav-link {
+  transition-delay: .4s;
+}
+
+.nav-list.active .nav-item:nth-child(3) .nav-link {
+  transition-delay: .3s;
+}
+
+.nav-list.active .nav-item:nth-child(4) .nav-link {
+  transition-delay: .2s;
+}
+
+.nav-list.active .nav-item:nth-child(5) .nav-link {
+  transition-delay: .1s;
+}
+
+/* reverse animation */
+
+.nav-list .nav-item:nth-child(1) .nav-link {
+  transition-delay: .1s;
+}
+
+.nav-list .nav-item:nth-child(2) .nav-link {
+  transition-delay: .2s;
+}
+
+.nav-list .nav-item:nth-child(3) .nav-link {
+  transition-delay: .3s;
+}
+
+.nav-list .nav-item:nth-child(4) .nav-link {
+  transition-delay: .4s;
+}
+
+.nav-list .nav-item:nth-child(5) .nav-link {
+  transition-delay: .5s;
+}
+
+@media screen and (max-width: 768px) {
+
+    .nav-list {
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color2);
+      position: fixed;
+      left: 0;
+      bottom: -100vh;
+      transform: bottom 650ms;
+    }
+
+    .nav-list.active {
+      bottom: 0;
+    }
+
+}
+
+/*=========Menú hamburguesa =============*/
 
 .header {
   display: flex;
   align-items: center;
-  width: 100vw;
-  height: 10%;
-  justify-content: space-between;
   background-color: rgb(76, 89, 229);
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 2;
   width: 100%;
 
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
+flex: 1;
+margin: 20px;
+align-items:flex-start;
+text-align:start;
+align-content: center;
 
 }
 
@@ -122,27 +256,32 @@ body {
 }
 
 .logo img {
-  max-width: 100px;
-  height: auto;
+max-width: 100px;
+height: auto;
 }
 
 .language-selector {
-flex: 1;
-flex-direction: column;
+flex:1;
+display: flex;
 border-style: dashed;
-align-items: center;
-justify-content: center;
+margin: 20px;
+align-items:flex-start;
+text-align:center;
+
 
 
 }
 
 .language-option {
-  width: 30px;
-  height: 20px;
-  margin-left: 5px;
-  cursor: pointer;
-  border-style: double;
+flex-direction: row;
+width: 30px;
+height: 20px;
+justify-content: center;
+margin: 20px;
+cursor: pointer;
+border-style: double;
 }
+
 
 
 
@@ -214,14 +353,14 @@ justify-content: center;
 
 }
 
-.small-container{
+.small-container{   /*contiene texto equipo de diseño*/
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: rgba(237, 237, 237, 0.407);
   padding: 10px;
   max-width: 30%;
-  height: 50%;
+  height: 70%;
   margin-left:60%; /* Valor positivo para desplazar hacia la derecha */
   align-self:flex-start; /* Desplazar hacia arriba */
   text-align: center;
@@ -230,7 +369,7 @@ justify-content: center;
   overflow: hidden;
 
 }
-.small-text{
+.small-text{   /*texto Nuestro equipo..*/
 flex-direction: column;
 color: rgb(255, 255, 255);
 font-family: Georgia, 'Times New Roman', Times, serif;
@@ -247,7 +386,7 @@ align-items: center;
 }
 .texto-hacemos{
   flex-direction: column;
-  color: rgba(255, 255, 255, 0.952);
+  color: rgba(115, 115, 115, 0.952);
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 600;
   font-size:4.5vw;
@@ -361,25 +500,123 @@ margin-left: 2%;
 }
 
 .fourth-container {
-  background-color: #ffffff;
-  height: 1000px;
-  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100vw;
+  height: 700px;
   text-align: center;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+	/* background-image: url(https://images.unsplash.com/photo-1643267514395-b36b3f7e8281?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  /* -webkit-filter: blur(5px); */
+
 }
 
-.fourth-container h3 {
-  font-size: 2.5vw;
-  margin-bottom: 10px;
+
+/*========================FORMULARIO=======================*/
+
+.form-container{
+  display: flex;
+  height: 200px;
+	margin: 0;
+	padding: 0;
+	background: rgba(26, 9, 216, 0.5);
+	color: rgba(255, 255, 255, 0.5);
+	font-family: Arial;
+	font-size: 12px;
+
+
+
 }
 
-.fourth-container p {
-  font-size: 1.5vw;
-  margin-bottom: 20px;
+.login{
+	position: absolute;
+	top: calc(50% - 75px);
+	left: calc(50% - 50px);
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+  z-index: 2;
+  border-style: solid;
+ 
+
+}
+
+.login input[type=text]{      /*casilla username*/
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+  margin-top: 10px;
+ 
+}
+
+.login input[type=password]{   /*casilla password*/
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login input[type=button]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login input[type=button]:hover{       /*Boton login*/
+	opacity: 0.8;
+}
+
+.login input[type=button]:active{      /*Boton login*/
+	opacity: 0.6;
+}
+
+.login input[type=text]:focus{         /*Al picar en casilla*/
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{      /*Al picar en casilla*/
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=button]:focus{        /*Al picar en casilla*/
+	outline: none;
+}
+
+::-webkit-input-placeholder{            /*Transparencia*/
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{               /*Transparencia*/
+   color: rgba(255,255,255,0.6);
 }
 
 

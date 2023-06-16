@@ -1,8 +1,8 @@
 
-function onClickMenu(){
-  document.getElementById("menu").classList.toggle("change");
-  document.getElementById("nav").classList.toggle("change");
+const elment = document.querySelector('.hamburger');
+const elment1 = document.querySelector('.nav-list');
 
-  document.getElementById("menu-bg").classList.toggle("change-bg");
-
-}
+elment.addEventListener("click", ()=> {
+  elment.classList.toggle('active');
+  elment1.classList.toggle('active');
+})
