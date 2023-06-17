@@ -82,7 +82,7 @@ nav {    /*contenedor del nav Línea sup como header*/
   transform: scale(0);
   transition: transform 650ms;
   font-size: 14px;
-  margin-left: 8px;
+  margin-left: 3px;  /*correr textos izq-der*/
   /* color: #12dc19; */
 }
 
@@ -294,12 +294,12 @@ cursor: pointer;
 border-style: double;
 }
 
-
+/*=========Menú hamburguesa =============*/
 
 
 /*///////////////////////*****\\\\\\\\\\\\\\\\\\\\\\\\*/
 
-.container { /* Genral caja 1*/
+.container { /* General caja 1*/
     display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -452,11 +452,11 @@ margin-left: 2%;
   float: left;
   margin-right: 3%;
 
+
 }
 
 .third-container {     /*contenedor rejilla-TODO*/
   display: flex;
-  background-color: rgb(255, 255, 255);
   height: 1000px;
   width: 100vw;
   display: flex;
@@ -467,7 +467,23 @@ margin-left: 2%;
   padding: 20px;
   position: relative;
   overflow: hidden;
+  
+}
 
+.third-container::before {
+  /* Capa pseudo-elemento para la imagen de fondo */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://images.unsplash.com/photo-1535078035266-a0fa7d3b8f65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(5px); /* Aplica el efecto de desenfoque */
+  z-index: -1;
 }
 
 .inner-container2 {   /*contenedor rejilla-exterior Fondo*/
@@ -478,7 +494,8 @@ margin-left: 2%;
   width: 45%;
   height: 65%;
   background-color: #ffffff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+    backdrop-filter:blur(5);
 
 }
 
@@ -493,6 +510,85 @@ margin-left: 2%;
 
 }
 
+.third-container .inner-box-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px; /* Ajusta el valor según tus necesidades */
+  width: 100%;
+  height: 100%;
+  background-image: url(https://assets.nicepagecdn.com/d2cc3eaa/88834/images/gh.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.third-container .inner-box-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px; /* Ajusta el valor según tus necesidades */
+  width: 100%;
+  height: 100%;
+  background-image: url(https://assets.nicepagecdn.com/d2cc3eaa/88834/images/rtrtrtrt.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.third-container .inner-box-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px; /* Ajusta el valor según tus necesidades */
+  width: 100%;
+  height: 100%;
+  background-image: url(https://images.unsplash.com/photo-1685673414962-b602f4776e8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=738&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.third-container .inner-box-7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px; /* Ajusta el valor según tus necesidades */
+  width: 100%;
+  height: 100%;
+  background-image: url(https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.third-container .inner-box-9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px; /* Ajusta el valor según tus necesidades */
+  width: 100%;
+  height: 100%;
+  background-image: url(https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .square {
   display: flex;
   flex-direction: column;
@@ -501,15 +597,46 @@ margin-left: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+
 }
 
 .square:nth-child(even) {    /*colors 1 chess*/
   background-color: #ffffff;
+  
 }
 
 .square:nth-child(odd) {     /*colors 2 chess*/
   background-color: #c0c0c0;
 }
+
+.text-square{
+display:flex;
+flex-direction: column;
+font-style: oblique;
+
+
+}
+
+#p{
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size:small;
+  font-style: normal;
+  color: #000000;
+
+
+}
+
+
+
+
+
+
+
+/*========================FORMULARIO=======================*/
 
 .fourth-container {
   display: flex;
@@ -519,10 +646,6 @@ margin-left: 2%;
   /* -webkit-filter: blur(5px); */
 
 }
-
-
-/*========================FORMULARIO=======================*/
-
 
 .form-container{
   display: flex;
