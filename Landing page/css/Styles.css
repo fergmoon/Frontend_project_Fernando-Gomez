@@ -410,7 +410,32 @@ align-items: center;
 
   }
 
-.franja-fotos-container{
+  .franja-fotos-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+  }
+  
+  .carousel-track {
+    display: flex;
+  }
+  
+  .carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+  }
+
+/* .franja-fotos-container{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -423,7 +448,7 @@ align-items: center;
   gap:20px;
 
 
-}
+} */
 .caja-foto1{
 
 height: 80%;
