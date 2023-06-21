@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIMENZIONAR DISEÑO SAS</title>
 
-    <link rel="stylesheet" type="text/css" href="css/Styles.css">   
-		<link rel="stylesheet" href="main.css" type="text/css">
+      
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo:100,200,400">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/Styles.css"> 
 
-
+  </head>
     
     <body>
-    <header class="header">
-      <nav>        
-        <div class="logo-container" style="background-color: aliceblue;">
-          <div class="logo">
-            <img src="./images/logo.png" alt="Logo">
-          </div>
-        </div>
-        
-        <div class="language-selector" >
-          <div class="language-option">
-              <img src="flag-en.png" alt="English">
-          </div>
-          <div class="language-option">
-              <img src="flag-es.png" alt="Spanish">
-         </div>
-        </div>  
-        <div class="container-menu">
-          <!-- <a class="navbar-brand" href="#"></a>  circulo logo?-->
-            <ul class="nav-list">
-              <li class="nav-item"><a class="nav-link" href="">home</a></li>
-              <li class="nav-item"><a class="nav-link" href="">about</a></li>
-              <li class="nav-item"><a class="nav-link" href="">videos</a></li>
-              <li class="nav-item"><a class="nav-link" href="">competences</a></li>
-              <li class="nav-item"><a class="nav-link" href="">contacts</a></li>
-            </ul>
-            <div class="hamburger">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>          
-        </div>  
-      </nav> 
-    </header>
+      <header class="header">
+        <nav>        
+            <div class="logo-container" style="background-color: aliceblue;">
+              <div class="logo">
+                <img src="./images/logo.png" alt="Logo">
+              </div>
+            </div>
+
+            <div class="language-selector" >
+              <div class="language-option">
+                <img src="flag-en.png" alt="English">
+              </div>
+              <div class="language-option">
+                  <img src="flag-es.png" alt="Spanish">
+              </div>
+            </div>  
+
+            <div class="container-menu">
+              <!-- <a class="navbar-brand" href="#"></a>  circulo logo?-->
+                <ul class="nav-list">
+                  <li class="nav-item"><a class="nav-link" href="">home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="">about</a></li>
+                  <li class="nav-item"><a class="nav-link" href="">videos</a></li>
+                  <li class="nav-item"><a class="nav-link" href="">competences</a></li>
+                  <li class="nav-item"><a class="nav-link" href="">contacts</a></li>
+                </ul>
+                <div class="hamburger">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>          
+            </div>  
+        </nav> 
+      </header>
   
     <div class="container">
       <div class="caja1">
@@ -58,38 +60,32 @@
         </div>
       </div>
     </div>
+
     <div class="second-container">
       <div class="inner-container">
         <h2 class="texto-hacemos">Que hacemos...</h2>
-        <div class="small-container"><p class="small-text">
+        <div class="small-container">
+          <p class="small-text">
           Nuestro equipo de diseño
-        trabaja codo con codo con la producción,
-        y esta sinergia orgánica permite la creación
-        de diseños innovadores.</p>
-      </div>                    
+          trabaja codo con codo con la producción,
+          y esta sinergia orgánica permite la creación
+          de diseños innovadores.</p>
+        </div>                    
       </div>               
     </div>
-    <div class="franja-fotos-container">
-      <!-- <div class="caja-foto1"></div>
-      <div class="caja-foto2"></div>
-      <div class="caja-foto3"></div> -->
     
-    <div class="carousel">
-      <div class="carousel-track">
-        <div class="carousel-slide">
-          <img src="ruta-a-la-imagen-1.jpg" alt="Imagen 1">
-        </div>
-        <div class="carousel-slide">
-          <img src="ruta-a-la-imagen-2.jpg" alt="Imagen 2">
-        </div>
-        <div class="carousel-slide">
-          <img src="ruta-a-la-imagen-3.jpg" alt="Imagen 3">
-        </div>
-        <!-- Agrega más div.carousel-slide con las imágenes adicionales -->
+    <section class="section-carousel">
+      <div class="carousel-container">          
+          <div class="carousel-slides">
+            <div class="carousel-item item1">
+              <img src="./images/clark-street-mercantile-P3pI6xzovu0-unsplash.jpg" alt="Image 1">
+              
+            <div class="carousel-arrows">
+              <label for="radio1" class="arrow arrow-left"><i class="fas fa-chevron-left"></i></label>
+              <label for="radio2" class="arrow arrow-right"><i class="fas fa-chevron-right"></i></label>
+          </div>          
       </div>
-    </div>
-  </div>
-    
+  </section>      
     <div class="third-container">
       <h3>Tercer Contenedor</h3>
       <div class="inner-container2">
@@ -170,18 +166,36 @@
 
       
       <footer>
-        <!-- Código del pie de página -->
+        <footer class="footer">
+          <div class="container-footer">
+              <div class="footer-item">
+                  <h3>Ubicación</h3>
+                  <p>123 Calle Principal, Ciudad</p>
+                  <p>Estado, Código Postal</p>
+              </div>
+              <div class="footer-item">
+                  <h3>Contacto</h3>
+                  <p>Teléfono: 123-456-7890</p>
+                  <p>Email: info@dimenzionar.com</p>
+              </div>
+              <div class="footer-item">
+                  <h3>Síguenos</h3>
+                  <div class="social-icons">
+                      <a href="#"><i class="fab fa-facebook"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div>
+          </div>
+      </footer>
       </footer>
       
-    </div>
+    <!-- </div> -->
 
     <script src="./script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-</body>
+    </body>
 </html>
-
-  </body>
-  </html>

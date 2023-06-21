@@ -342,11 +342,16 @@ border-style: double;
 
 }
 
+/*==========SECOND-CONTAINER=============*/
+
 .second-container {    /*Caja 2*/
   display: flex;
+  flex-direction: row;
   background-color: #ffffff;
-  height: 1500px;
-  width: 100%;
+  height: 800px;
+  width: max-content;
+  float: left;
+  gap: 10px;
 }
 
 .inner-container {    /*contenedor de la foto*/
@@ -410,30 +415,98 @@ align-items: center;
 
   }
 
-  .franja-fotos-container {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .carousel {
-    display: flex;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-  }
-  
-  .carousel-track {
-    display: flex;
-  }
-  
-  .carousel-slide {
-    flex: 0 0 100%;
-    width: 100%;
-  }
-  
-  .carousel-slide img {
-    width: 100%;
-    height: auto;
-  }
+   
+/*===========CARRUSEL=============*/
+/* Estilos para el carrusel */
+
+.section-carousel {  /*se aplica al contenedor principal del carrusel. Está configurado para ocupar el ancho completo de su contenedor padre y alinear el contenido al centro horizontalmente.*/
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction:row ;
+  float: left;
+
+}
+
+.carousel-container {/*se aplica al contenedor del carrusel en sí. Tiene una posición relativa para permitir que los elementos internos se posicionen correctamente. El ancho está establecido en el 80% de su contenedor padre, con un máximo de 1200px. El margen se establece en automático para centrar el contenedor horizontalmente.*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  /* max-width: calc(100% - 40px); */
+  margin: 0 auto;
+  background-color: #ef0a0a;
+}
+
+.carousel-slides {  /*se aplica al contenedor que contiene todas las diapositivas del carrusel. Se establece como un contenedor flexible y se configura una transición suave de 0.5 segundos para el efecto de desplazamiento.*/
+  display: flex;
+
+  width: 100vw;
+background-color: #12dc19;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {   /*se aplica a cada elemento individual del carrusel. Se establece como un contenedor flexible con un ancho fijo del 100% para que ocupe todo el ancho del contenedor de diapositivas. Los elementos se alinean al centro tanto vertical como horizontalmente.*/
+  flex: 0 0 calc(100% / 12);
+}
+
+.carousel-item img {  /*Esta regla se aplica a las imágenes dentro de los elementos del carrusel. Se establece un ancho máximo del 100% para que la imagen se ajuste correctamente al ancho del elemento padre, y la altura se ajusta automáticamente para mantener la proporción de aspecto original de la imagen.
+css*/
+
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 500px; /* Ajusta el tamaño de altura deseado */
+}
+
+/*.carousel-dots {   se aplica al contenedor de los puntos de navegación del carrusel. Se establece como un contenedor flexible y se alinean los puntos al centro horizontalmente. También se agrega un margen superior de 10px para separarlo visualmente del contenido anterior.*/
+  /* position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+} */
+
+/*.dot {    Estas reglas se aplican a cada punto de navegación (dot) del carrusel. Se establece un ancho y alto de 10px para crear un círculo. El fondo se establece en un color gris claro (#bbb), con un margen horizontal de 5px entre cada punto. Al pasar el cursor sobre un punto, el color de fondo cambia a un gris más oscuro (#888) mediante una transición suave.*/
+  /* width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+} */
+
+/*.dot:hover {  incluida arriba*/
+  /* background-color: #888;
+} */
+
+/*Estas reglas (abajo) se aplican a los elementos de navegación con flechas del carrusel. El contenedor de flechas tiene una posición absoluta y se alinea verticalmente al centro. Las flechas se muestran en ambos extremos y se separan con un espacio equitativo entre ellas mediante justify-content: space-between. Cada flecha tiene un color de texto gris claro (#888) y un tamaño de fuente de 24px. Al pasar el cursor sobre las flechas, el color de texto cambia a un gris más oscuro (#333) mediante una transición suave.*/
+
+.carousel-arrows {
+  position: absolute;
+  bottom: 50%;  /*mueve las flechas a la mitad de la altura del contenedor del carrusel.*/
+  transform: translateY(50%); /* asegura que las flechas se centren verticalmente en la mitad del contenedor del carrusel.*/
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.arrow {
+  color: #888;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.arrow:hover {
+  color: #333;
+}
+
+
+
 
 /* .franja-fotos-container{
   display: flex;
@@ -449,6 +522,10 @@ align-items: center;
 
 
 } */
+
+/*========================CARRUSEL=======================*/
+
+
 .caja-foto1{
 
 height: 80%;
@@ -656,11 +733,6 @@ font-style: oblique;
 }
 
 
-
-
-
-
-
 /*========================FORMULARIO=======================*/
 
 .fourth-container {
@@ -802,6 +874,48 @@ font-style: oblique;
    color: rgba(255,255,255,0.6);
 }
 
+
+
+/*================FOOTER==================*/
+
+/* Estilos para el pie de página */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-item {
+  flex: 0 0 30%;
+}
+
+.footer-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-item p {
+  margin: 0;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #888;
+}
 
 
 /*  */
