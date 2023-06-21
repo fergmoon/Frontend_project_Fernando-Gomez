@@ -419,7 +419,28 @@ align-items: center;
 /*===========CARRUSEL=============*/
 /* Estilos para el carrusel */
 
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
 
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-item.active {
+  transform: translateX(0);
+}
 
 
 
