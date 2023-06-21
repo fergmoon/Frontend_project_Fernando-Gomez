@@ -48,3 +48,23 @@ document.querySelector('.carousel-container').addEventListener('click', function
 
 //=========Fin carrusel=========
 
+//=========inicio Flechas carrusel=========
+
+const carouselContainer = document.querySelector('.carousel-container');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+
+// Event listener para la flecha izquierda
+leftArrow.addEventListener('click', prevSlide);
+
+// Event listener para la flecha derecha
+rightArrow.addEventListener('click', nextSlide);
+
+// Asegúrate de que el carrusel esté visible al cargar la página
+showSlide(currentIndex);
+
+// Función para mostrar una diapositiva
+function showSlide(index) {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+}
+//=========fin Flechas carrusel=========
