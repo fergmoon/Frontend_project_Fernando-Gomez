@@ -11,60 +11,21 @@ elment.addEventListener("click", () => {
 
 
 //=========comienzo carrusel=========
-const carousel = document.querySelector('.carousel');
-const carouselItems = document.querySelectorAll('.carousel-item');
+const rectangles = document.querySelectorAll('.rectangle');
+const images = document.querySelectorAll('.carousel-image');
 
-let currentIndex = 0;
-
-function showSlide(index) {
-  carousel.style.transform = `translateX(-${index * 100}%)`;
-}
-
-function nextSlide() {
-  currentIndex++;
-  if (currentIndex >= carouselItems.length) {
-    currentIndex = 0;
-  }
-  showSlide(currentIndex);
-}
-
-function prevSlide() {
-  currentIndex--;
-  if (currentIndex < 0) {
-    currentIndex = carouselItems.length - 1;
-  }
-  showSlide(currentIndex);
-}
-
-// Event listeners for arrow navigation
-document.querySelector('.carousel-container').addEventListener('click', function (event) {
-  const target = event.target;
-  if (target.classList.contains('next')) {
-    nextSlide();
-  } else if (target.classList.contains('prev')) {
-    prevSlide();
-  }
+rectangles.forEach((rectangle, index) => {
+  rectangle.addEventListener('click', () => {
+    // Removemos la clase 'active' de todos los rectángulos y las imágenes
+    rectangles.forEach((rectangle) => rectangle.classList.remove('active'));
+    images.forEach((image) => image.classList.remove('active'));
+    
+    // Agregamos la clase 'active' al rectángulo y la imagen seleccionada
+    rectangle.classList.add('active');
+    images[index].classList.add('active');
+  });
 });
+
 
 //=========Fin carrusel=========
 
-//=========inicio Flechas carrusel=========
-
-const carouselContainer = document.querySelector('.carousel-container');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-
-// Event listener para la flecha izquierda
-leftArrow.addEventListener('click', prevSlide);
-
-// Event listener para la flecha derecha
-rightArrow.addEventListener('click', nextSlide);
-
-// Asegúrate de que el carrusel esté visible al cargar la página
-showSlide(currentIndex);
-
-// Función para mostrar una diapositiva
-function showSlide(index) {
-  carousel.style.transform = `translateX(-${index * 100}%)`;
-}
-//=========fin Flechas carrusel=========

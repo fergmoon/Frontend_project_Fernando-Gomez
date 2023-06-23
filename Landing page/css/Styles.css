@@ -351,42 +351,35 @@ nav {
   position: relative;
 }
 
-.caja1 {
-  /*Contenedor de los textos az-vd*/
+.caja1 { /*Contenedor de los textos az-vd*/  
   background-color: rgba(255, 255, 255, 0.115);
   padding: 20px;
   box-sizing: border-box;
   max-width: 30%;
   height: 70%;
-  margin-left: 10%;
-  /* Valor positivo para desplazar hacia la derecha */
-  margin-bottom: 10%;
-  /* Valor ajustable para mover la caja hacia arriba */
-  align-self: flex-start;
-  /* Desplazar hacia arriba */
+  margin-left: 10%;/* Valor positivo para desplazar hacia la derecha */  
+  margin-bottom: 10%;/* Valor ajustable para mover la caja hacia arriba */  
+  align-self: flex-start; /* Desplazar hacia arriba */ 
   text-align: center;
-
 }
 
-.linea1 {
-  /*texto verde*/
+.linea1 {/*texto verde*/  
   display: flex;
   flex-direction: column;
   color: #12dc19;
   font-size: 1.25vw;
   font-weight: bold;
   margin-top: 1%;
-  /* Valor ajustable para mover el texto hacia abajo */
+  
 
 }
 
-.linea2 {
-  /*texto azul*/
+.linea2 {   /*texto azul*/
+ 
   color: #083ac4;
   font-size: 3.5vw;
-  /*70px*/
   margin-top: 65px;
-  /* Valor ajustable para mover el texto hacia abajo */
+
 
 }
 
@@ -408,7 +401,7 @@ nav {
   width: 100vw;
   height: auto;
   flex-direction: row;
-  background-image: url("./images/1-r-architecture-rOk4VSMS3Ck-unsplash.jpg");
+  background-image: url(./images/1-r-architecture-rOk4VSMS3Ck-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -467,67 +460,60 @@ nav {
 
 /*===========INICIO CARRUSEL=============*/
 /* Estilos para el carrusel */
-
 .carousel-container {
   display: flex;
-  flex-direction: row; /*ya es row por defecto el carrusel */
-  position: relative;
-  width: 100%;
-  height:100%;
-  overflow: hidden;
-  justify-items: center;
+  flex-direction: column;
   align-items: center;
-  transition: transform 0.5s ease; 
-
+  width: 100vw; /* Ajusta el ancho de la imagen al contenedor */
+  height: 350px;
+  /*max-height: 350px;  Ajusta la altura de la imagen proporcionalmente */
+  /*object-fit: cover;  Ajusta el tamaño de la imagen para que cubra completamente el contenedor */
+  overflow: hidden;
+  flex-wrap: nowrap; /* Evita que las imágenes y rectángulos se envuelvan en filas */
 }
 
-.carousel {
+.carousel-images {
   display: flex;
-  flex-direction: row;
-  width:fit-content;   /* Ajusta el ancho del carrusel al contenido */
-  /* height: 100%; 
-  transition: transform 0.5s ease; */
-}
-
-.carousel-item {
-  flex: 0 0 auto;    /* Establece un ancho automático para los elementos del carrusel */
-  margin:0 10px;   /* Añade margen entre los elementos */
-
-}
-
-.carousel-item img {
+  /*flex-wrap: nowrap;evita apilamiento*/
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: auto;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-image {
+  flex: 0 0 auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
-  padding: 1%;
+  transition: opacity 0.5s ease;
 
 }
 
-.carousel-item.active {
-  transform: translateX(0);
-}
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: gray;
-  /* estilos adicionales de las flechas */
+.carousel-image.active {
+  opacity: 1;
 }
 
-.left-arrow {
-  left: 10px;
+.carousel-rectangles {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Espacio entre las imágenes y los rectángulos */
 }
 
-.right-arrow {
-  right: 10px;
-  
+.rectangle {
+  width: 10px;
+  height: 4px;
+  background-color: #999;
+  margin: 0 5px; /* Espacio entre los rectángulos */
+  cursor: pointer;
 }
 
-
-
-
+.rectangle.active {
+  background-color: #333; /* Color del rectángulo activo */
+}
 
 
 /*========================FIN CARRUSEL=======================*/
@@ -781,21 +767,6 @@ nav {
   /* -webkit-filter: blur(5px); */
 
 }
-
-/* .form-overlay{   /*recuadro margen formulario*/
-/* position: absolute; */
-/*top: 50%;  /* Posiciona el elemento en la mitad vertical */
-/*left: 50%;  /* Posiciona el elemento en la mitad horizontal */
-/*transform: translate(-50%, -50%); /* Ajusta la posición centrada */
-/*width: 22.5%; /* Ajusta el ancho del cuadro blanco */
-/*height: 60%;  Ajusta la altura del cuadro blanco */
-/* border: 2px solid rgba(255, 255, 255, 0.5);  */
-/* background-color: rgba(255, 255, 255, 0.424);
-  border-radius: 5px;
-  padding: 20px; 
-  z-index: -1;
-
-}  */
 
 .login {
   display: flex;
