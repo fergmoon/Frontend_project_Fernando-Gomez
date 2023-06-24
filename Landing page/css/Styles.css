@@ -784,6 +784,7 @@ nav {
   margin-left:5%;
   justify-content: center;
   align-items: center;
+  text-align: center;
   border-style:dashed;
   font-family: Arial;
   font-size: 12px; 
@@ -797,58 +798,60 @@ nav {
 
 }
 
-.login input[type=text] {
-  /*casilla username*/
-  width: 250px;
-  height: 30px;
+.login input[type=text] {  /*casilla username*/
+  display: flex;
+  width: 90%;
+  height: 8%;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 2px;
+  border-radius: 1%;
   color: #fff;
   font-family: 'Exo', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 4px;
-  margin-top: 10px;
+  font-size:larger;
+  font-weight:normal;
+  padding: 1%;
+ 
 
 }
 
-.login input[type=password] {
-  /*casilla password*/
-  width: 250px;
-  height: 30px;
+.login input[type=password] {   /*casilla password*/
+  display: flex;
+  width: 90%;
+  height: 8%;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 2px;
+  border-radius: 1%;
   color: #fff;
   font-family: 'Exo', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 4px;
-  margin-top: 10px;
+  font-size:larger;
+  font-weight:normal;
+  padding: 1%;
+
 }
 
 .login input[type=button] {
-  width: 260px;
-  height: 35px;
+  width: 90%;
+  height: 10%;
+  justify-content: center;
+  align-items: center;
   background: #fff;
   border: 1px solid #fff;
   cursor: pointer;
   border-radius: 2px;
   font-family: 'Exo', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 6px;
-  margin-top: 10px;
+  font-size:large;
+  font-weight:bold;
+
+  margin-top: 10%;
 }
 
+
 .login input[type="button"] {
-  margin-top: 20px;
+  margin-top: 1%;
   /* Ajusta el margen superior para separarlo de los campos de texto */
 }
 
-.login input[type=button]:hover {
-  /*Boton login*/
+.login input[type=button]:hover {/*Boton login*/  
   opacity: 0.8;
 }
 
@@ -861,6 +864,7 @@ nav {
   /*Al picar en casilla*/
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.9);
+
 }
 
 .login input[type=password]:focus {
