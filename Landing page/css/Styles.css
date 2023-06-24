@@ -463,8 +463,8 @@ nav {
 /* Estilos para el carrusel */
 
 .carousel-container {
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   width: 100vw; /* Ajusta el ancho de la imagen al contenedor */
@@ -478,8 +478,7 @@ nav {
 
 .carousel-images {
   display: flex;
-  /*flex-wrap: nowrap;evita apilamiento*/
-  /* flex-direction: row; */
+  flex-direction: row; 
   align-items: center;
   justify-content: center;
   /* width: 100%; */
@@ -495,7 +494,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: 100%; */
   height: 100%;
   max-width: 100%;
   object-fit: contain;
@@ -508,20 +506,19 @@ nav {
 }
 
 .rectangle-layer {   /*rectángulos carrusel*/
+  display: flex;
   position: absolute;
-  bottom: 20px; /* Ajusta la posición vertical según tus necesidades */
+  bottom: 3%; /* Ajusta la posición vertical según tus necesidades */
   left: 0;
   right: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-left:auto;
-  margin-right: auto; */
   z-index: 3; /* Asegura que los rectángulos estén por encima de las imágenes */
   cursor: pointer; /* Cambia el puntero al pasar sobre el rectángulo */
 }
 
 .rectangle {
+  display: flex;
   width: 8px; /* Ajusta el ancho del rectángulo  */
   height: 8px; /* Ajusta la altura del rectángulo  */
   background-color: white; /* Ajusta el color del rectángulo  */
@@ -531,7 +528,7 @@ nav {
 }
 
 .rectangle.active {
-  background-color: #333; /* Color del rectángulo activo */
+  background-color: #f8a305; /* Color del rectángulo activo */
 }
 
 
@@ -762,8 +759,7 @@ nav {
   padding:4%;
   margin-left: -56%;
   font-size: 2vw;
-  color: rgb(32, 19, 227);
-  
+  color: rgb(32, 19, 227);  
   
 }
 
@@ -780,8 +776,6 @@ nav {
   padding: 1%;
   margin-top:4%;
 
-
-
 }
 
 .login input[type=text] {  /*casillas todas - pass*/
@@ -795,7 +789,7 @@ nav {
   border-radius: 1%;
   font-family: 'Exo', sans-serif;
   color: #ffffff;
-  font-size:1vw;
+  font-size:1.5vw;
   padding:3%;  /*separacion texto- cuadro contenedor*/
   
  
@@ -813,7 +807,7 @@ nav {
   border: 1px solid rgba(25, 188, 10, 0.9);
   border-radius: 1%;
   font-family: 'Exo', sans-serif;
-  font-size:1vw;
+  font-size:1.5vw;
   padding:3%;
   
 
@@ -824,15 +818,13 @@ nav {
   height: 3%;
   flex: 1;
   justify-content: center;
-  align-items: center;
-  justify-self: center;
   align-self: center;
   background: hsl(123, 94%, 46%);
   border: 1px solid #08a20d;
   cursor: pointer;
   border-radius: 2px;
   font-family: 'Exo', sans-serif;
-  font-size:1vw;
+  font-size:2vw;
   font-weight:bold;
   color: #303130;
 
