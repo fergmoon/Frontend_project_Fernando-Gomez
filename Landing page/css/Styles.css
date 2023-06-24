@@ -536,40 +536,7 @@ nav {
 
 /*========================FIN CARRUSEL=======================*/
 
-
-.caja-foto1 {
-
-  height: 80%;
-  width: 30%;
-  background-color: #ffffff;
-  float: left;
-  margin-left: 2%;
-
-
-}
-
-.caja-foto2 {
-
-  height: 80%;
-  width: 30%;
-  background-color: #ffffff;
-  float: left;
-
-}
-
-.caja-foto3 {
-
-  height: 80%;
-  width: 30%;
-  background-color: #ffffff;
-  float: left;
-  margin-right: 3%;
-
-
-}
-
-.third-container {
-  /*contenedor rejilla-TODO*/
+.third-container {    /*contenedor rejilla-TODO*/
   display: flex;
   height: 1000px;
   width: 100vw;
@@ -596,36 +563,65 @@ nav {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: blur(5px);
-  /* Aplica el efecto de desenfoque */
+  filter: blur(2px);  /* Aplica el efecto de desenfoque */
   z-index: -1;
 }
 
-.inner-container2 {
-  /*contenedor rejilla-exterior Fondo*/
+.inner-container2 {   /*contenedor cuadro Fondo blanco*/
+ 
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 45%;
-  height: 65%;
+  width: 50%;
+  height: 75%;
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(5);
+
 
 }
 
-.sub-container {
-  /* rejilla*/
+.sub-container {  /* rejilla*/
+
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
   color: #1e1e1e;
   align-items: center;
   justify-content: center;
+  text-align: center;
+
 
 }
+.Text-square{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  color: #12dc19;
+  text-align: center;
+  font-family: fantasy;
+  font-weight: 5;
+
+  
+  
+  }
+  
+  #paragraph{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    color: #000000;
+    padding-top: 1%;
+    font-size: smaller;
+    text-align: center;
+    padding: 5%;
+    font-family:'Trebuchet MS' sans-serif;
+    
+    
+    }
 
 .third-container .inner-box-1 {
   display: flex;
@@ -642,6 +638,8 @@ nav {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+
 
 
 .third-container .inner-box-3 {
@@ -775,30 +773,29 @@ nav {
 
 }
 
-.login {  /*contenedor del formulario*/
+.login {  /*cuadro contenedor del formulario*/
   display: flex;
   flex-direction: column;
-  width: 20%;
-  height: 55%;
-  margin-top: 2%;
+  width: 20%;  /*ancho recuadro form*/
+  height: 45%;  /*altura recuadro form*/
+  margin-top: 1%;
   margin-left:5%;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-style:dashed;
   font-family: Arial;
-  font-size: 12px; 
+  /* font-size: 60%;  */
   z-index: 1;
-  /* border-style: solid;
-  color: rgba(18, 220, 25, 0.5); */
-  border-radius: 5px;
-  /* background-color: rgba(18, 220, 25, 0.3); */
+  color: rgba(0, 0, 0, 0.682);
+  border-radius: 1.5%;
+  background-color: rgba(30, 30, 30, 0.817);
+  padding: 1%;
 
 
 
 }
 
-.login input[type=text] {  /*casilla username*/
+.login input[type=text] {  /*casillas todas - pass*/
   display: flex;
   width: 90%;
   height: 8%;
@@ -807,9 +804,9 @@ nav {
   border-radius: 1%;
   color: #fff;
   font-family: 'Exo', sans-serif;
-  font-size:larger;
+  font-size:70%;
   font-weight:normal;
-  padding: 1%;
+  padding: 2.5%;  /*separacion texto- cuadro contenedor*/
  
 
 }
@@ -823,9 +820,9 @@ nav {
   border-radius: 1%;
   color: #fff;
   font-family: 'Exo', sans-serif;
-  font-size:larger;
+  font-size:70%;
   font-weight:normal;
-  padding: 1%;
+  padding: 2.5%;
 
 }
 
@@ -839,15 +836,14 @@ nav {
   cursor: pointer;
   border-radius: 2px;
   font-family: 'Exo', sans-serif;
-  font-size:large;
+  font-size:70%;
   font-weight:bold;
 
-  margin-top: 10%;
 }
 
 
 .login input[type="button"] {
-  margin-top: 1%;
+padding: 1%;
   /* Ajusta el margen superior para separarlo de los campos de texto */
 }
 
