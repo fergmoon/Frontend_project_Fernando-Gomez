@@ -453,6 +453,7 @@ nav {
   margin-top: 50px;
   z-index: 1;
   margin-left: 10%;
+  word-wrap: break-word;
 
 }
 
@@ -536,11 +537,13 @@ nav {
 
 /*========================FIN CARRUSEL=======================*/
 
+
+/*========================INICIO REJILLA=======================*/
+
 .third-container {    /*contenedor rejilla-TODO*/
   display: flex;
-  height: 1000px;
+  height: 100vh;
   width: 100vw;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -574,7 +577,7 @@ nav {
   justify-content: center;
   position: absolute;
   width: 50%;
-  height: 75%;
+  height: 85%;
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
 
@@ -593,35 +596,8 @@ nav {
   text-align: center;
 
 
-}
-.Text-square{
-  display: flex;
-  flex-direction:row;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  color: #12dc19;
-  text-align: center;
-  font-family: fantasy;
-  font-weight: 5;
 
-  
-  
-  }
-  
-  #paragraph{
-    display: flex;
-    flex-direction:row;
-    justify-content: center;
-    color: #000000;
-    padding-top: 1%;
-    font-size: smaller;
-    text-align: center;
-    padding: 5%;
-    font-family:'Trebuchet MS' sans-serif;
-    
-    
-    }
+}
 
 .third-container .inner-box-1 {
   display: flex;
@@ -630,7 +606,6 @@ nav {
   align-items: center;
   align-content: center;
   padding: 10px;
-  /* Ajusta el valor según tus necesidades */
   width: 100%;
   height: 100%;
   background-image: url(https://assets.nicepagecdn.com/d2cc3eaa/88834/images/gh.jpg);
@@ -649,7 +624,6 @@ nav {
   align-items: center;
   align-content: center;
   padding: 10px;
-  /* Ajusta el valor según tus necesidades */
   width: 100%;
   height: 100%;
   background-image: url(https://assets.nicepagecdn.com/d2cc3eaa/88834/images/rtrtrtrt.jpg);
@@ -666,7 +640,6 @@ nav {
   align-items: center;
   align-content: center;
   padding: 10px;
-  /* Ajusta el valor según tus necesidades */
   width: 100%;
   height: 100%;
   background-image: url(https://images.unsplash.com/photo-1685673414962-b602f4776e8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=738&q=80);
@@ -683,7 +656,6 @@ nav {
   align-items: center;
   align-content: center;
   padding: 10px;
-  /* Ajusta el valor según tus necesidades */
   width: 100%;
   height: 100%;
   background-image: url(https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80);
@@ -700,7 +672,6 @@ nav {
   align-items: center;
   align-content: center;
   padding: 10px;
-  /* Ajusta el valor según tus necesidades */
   width: 100%;
   height: 100%;
   background-image: url(https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80);
@@ -709,15 +680,47 @@ nav {
   background-position: center;
 }
 
-.square {
+.Text-square{  /*Titulo del recuadro*/
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  color: #12dc19;
+  text-align: center;
+  font-family: fantasy;
+  font-weight: 5;
+  font-size: 1.5vw; 
+  word-wrap: break-word; 
+  
+}
+  
+#paragraph{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  color: #000000;
+  padding-top: 1%;
+  font-size: smaller;
+  text-align: center;
+  padding: 5%;
+  font-family:'Trebuchet MS' sans-serif;
+  text-overflow:ellipsis; /* Limita la longitud del texto y agrega puntos suspensivos */
+  overflow: hidden;
+
+}
+
+.square {   /*define realmente la rejilla-forma-*/
   display: flex;
   flex-direction: column;
   width: 33.33%;
   height: 33.33%;
-  display: flex;
   align-items: center;
   justify-content: center;
-
+  background-color: #12dc19;
+  word-wrap: break-word;
+  font-size: 1.25vw; /*Tamaño de la fuente*/
+  overflow: hidden;
 
 }
 
@@ -731,27 +734,7 @@ nav {
   /*colors 2 chess*/
   background-color: #c0c0c0;
 }
-
-.text-square {
-  display: flex;
-  flex-direction: column;
-  font-style: oblique;
-
-
-}
-
-#p {
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  font-size: small;
-  font-style: normal;
-  color: #000000;
-
-
-}
-
+/*========================FIN REJILLA=======================*/
 
 /*========================FORMULARIO=======================*/
 
@@ -765,7 +748,7 @@ nav {
 
 .form-container {  /*contenedor de la imágen de fondo*/
   display: flex;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   justify-content: center;
   background-image: url(https://images.unsplash.com/photo-1643267514395-b36b3f7e8281?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80);
@@ -773,23 +756,29 @@ nav {
 
 }
 
+#text-registro{
+  flex:1;
+  margin-top: 3%;
+  padding:4%;
+  margin-left: -56%;
+  font-size: 2vw;
+  color: rgb(32, 19, 227);
+  
+  
+}
+
 .login {  /*cuadro contenedor del formulario*/
   display: flex;
   flex-direction: column;
-  width: 20%;  /*ancho recuadro form*/
-  height: 45%;  /*altura recuadro form*/
-  margin-top: 1%;
-  margin-left:5%;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-family: Arial;
-  /* font-size: 60%;  */
+  width: 25%;  /*ancho recuadro form*/
+  height: 58%;  /*altura recuadro form*/
   z-index: 1;
-  color: rgba(0, 0, 0, 0.682);
   border-radius: 1.5%;
   background-color: rgba(30, 30, 30, 0.817);
   padding: 1%;
+  margin-top:4%;
 
 
 
@@ -797,53 +786,62 @@ nav {
 
 .login input[type=text] {  /*casillas todas - pass*/
   display: flex;
+  flex: 1;
   width: 90%;
-  height: 8%;
+  height: 10%;
+  justify-content: center;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid hsla(120, 93%, 38%, 0.9);
   border-radius: 1%;
-  color: #fff;
   font-family: 'Exo', sans-serif;
-  font-size:70%;
-  font-weight:normal;
-  padding: 2.5%;  /*separacion texto- cuadro contenedor*/
+  color: #ffffff;
+  font-size:1vw;
+  padding:3%;  /*separacion texto- cuadro contenedor*/
+  
  
 
 }
 
 .login input[type=password] {   /*casilla password*/
   display: flex;
+  flex: 1;
   width: 90%;
-  height: 8%;
+  height: 3%;
+  justify-content: center;
+  align-items: center;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(25, 188, 10, 0.9);
   border-radius: 1%;
-  color: #fff;
   font-family: 'Exo', sans-serif;
-  font-size:70%;
-  font-weight:normal;
-  padding: 2.5%;
+  font-size:1vw;
+  padding:3%;
+  
 
 }
 
 .login input[type=button] {
   width: 90%;
-  height: 10%;
+  height: 3%;
+  flex: 1;
   justify-content: center;
   align-items: center;
-  background: #fff;
-  border: 1px solid #fff;
+  justify-self: center;
+  align-self: center;
+  background: hsl(123, 94%, 46%);
+  border: 1px solid #08a20d;
   cursor: pointer;
   border-radius: 2px;
   font-family: 'Exo', sans-serif;
-  font-size:70%;
+  font-size:1vw;
   font-weight:bold;
+  color: #303130;
 
 }
 
 
 .login input[type="button"] {
-padding: 1%;
+padding: 3%;
+
   /* Ajusta el margen superior para separarlo de los campos de texto */
 }
 
