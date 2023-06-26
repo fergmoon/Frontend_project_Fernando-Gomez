@@ -1,11 +1,16 @@
 body {
-  background: black;
-  font-family: 'PT Sans', sans-serif;
+  background: rgb(0, 0, 0);
   margin: 0;
-  /* background-color:#000000; */
-  /* font-family: ''; */
-  font-weight: bold;
-  font-size: 20px;
+  padding: 0;
+  width: 100vw;
+}
+
+.header {  
+  background-color: #f5f5f5;
+  padding: 10px;
+  position: relative;
+
+
 }
 
 /*=========Menú hamburguesa =============*/
@@ -15,6 +20,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+
 }
 
 :root {
@@ -25,83 +31,58 @@ body {
   --color4: #021859;
   --color5: #0B9ED9;
   --color6: #000;
+  --color7: #17b70c;
 }
 
-html {
-  /* texto del menú-links-*/
-  font-size: 10px;
-  box-sizing: border-box;
-}
-
-.container-menu {
+.menu-container {
   /*Contenedor del menu hamburguesa*/
-  flex: 1;
-  flex-direction: column;
-  width: 100%;
-  max-width: 120rem;
+  display: flex;
+  flex-direction: row;
+  flex: 2;  
   margin: 0 auto;
-  padding: 0 1.5rem;
+
 }
 
 
-nav {
-  /*contenedor del nav Línea sup como header*/
-  width: 100%;
-  height: 8rem;
+ nav {  /* contenedor del nav Línea sup como header */  
   display: flex;
+  flex-direction:row;
   align-items: center;
   justify-content: space-between;
-  /* background-color:#fff ; */
+} 
+
+.nav-list {   /*contenedor del menú-links*/
+display: flex;
+flex-direction: row;
+background-color: aqua;
+
 }
 
-/*.navbar-brand {  logo del menú-opcional-*/
-/* background-color: var(--color2);
-  width: 6rem;
-  height: 6rem;
-  display: flex;
-  border-radius: 50%;
-  /* background-color: #a18d6c; */
-/*} */
-
-/*.navbar-brand i {  posible texto de logo-menú*/
-/* font-size: 4rem;
-  color:var(--color0);
-  margin: auto;
-} */
-
-.nav-list {
-  /*contenedor del menú-links*/
-  display: flex;
-  list-style: none;
-  /* background-color: rgba(245, 245, 245, 0.141); */
-}
-
-.nav-link {
-  /*Textos-links*/
-  font-size: 1.6rem;
+.nav-link {   /*Textos-links */
+  font-size: 1rem;
   text-decoration: none;
-  display: block;
-  margin: 0 2rem;
-  color: var(--color0);
+  display:flex;
+  flex-direction: row;
+  margin: 0 3vw;
+  color: var(--color3);
   text-transform: capitalize;
   transform: scale(0);
   transition: transform 650ms;
-  font-size: 14px;
-  margin-left: 3px;
-  /*correr textos izq-der*/
-  /* color: #12dc19; */
+  font-size: 1vw;
+  margin-left: 1rem;  /*correr textos izq-der*/
+  color: #12dc19;
 }
 
-.nav-item {
-  /*Underline links -animated-*/
+.nav-item { /*Underline links -animated-*/  
   position: relative;
   line-height: 8rem;
   transition-delay: .4s;
   visibility: hidden;
+  margin-right: 10px;
 }
 
-.nav-item::before {
-  /*propiedades underline -animated-*/
+.nav-item::before {  /*propiedades underline -animated-*/
+  
   content: '';
   position: absolute;
   width: 100%;
@@ -114,35 +95,30 @@ nav {
   transition: transform 650ms cubic-bezier(.68, -.55, .265, 1.55);
 }
 
-.nav-item:hover::before {
-  /*transformacion del underline*/
+.nav-item:hover::before {   /*transformacion del underline*/
   transform: scaleX(1);
   transform-origin: left;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu lines */
 .hamburger {
-  /*tamaño lineaSUP menu hamb*/
-  width: 3.6rem;
+  
+  width: 3.6rem; /*tamaño linea SUP menu hamb*/
   height: 1.8rem;
   position: relative;
   cursor: pointer;
-  line-height: 5rem;
-  z-index: 1500;
+  line-height:5rem;
+  z-index: 999; /* Asegura que el menú hamburguesa esté en la capa superior */
   justify-content: flex-end;
-  position: absolute;
+  position: relative;
   right: 40px;
   top: 30px;
 
-
-
 }
 
-.hamburger .line {
-  /*grosor de las líneas Hamb*/
-  width: 100%;
-  /*Del tamaño indicado arriba*/
-  height: 2px;
+.hamburger .line { /*grosor de las líneas Hamb*/  
+  width: 100%;  
+  height: 18%;  /*grosor de las líneas*/
   background-color: var(--color0);
   position: absolute;
   display: block;
@@ -153,183 +129,153 @@ nav {
 
 .hamburger .line:nth-child(1) {
   /*Linea Sup Hamb*/
-  top: 0;
-  /* background-color: #12dc19; */
+  top: 0;   /*altura linea*/
+  background-color: #12dc19;
 }
 
 .hamburger .line:nth-child(2) {
   /*Linea Sup Hamb*/
-  top: 50%;
+  top: 40%;  /*altura linea*/
   margin-top: -1px;
-  width: 2.8rem;
-  /* background-color: #dc12d9; */
+  width: 3.5rem;   /*largo linea 2*/
+  background-color: #dc12d9;
 }
 
 .hamburger .line:nth-child(3) {
   /*Linea Sup Hamb*/
-  top: 100%;
+  top: 80%;  
   margin-top: -2px;
-  width: 2rem;
-  /* background-color: #122ddc; */
+  width: 3.5rem;  /*largo linea 3*/
+  background-color: #122ddc;
 }
 
-.hamburger.active .line:nth-child(1) {
-  /*animacion cruz*/
-  transform: translateY(.8rem) rotate(45deg);
-  width: 2rem;
+.hamburger.active .line:nth-child(1) { /*animacion cruz*/  
+  transform: translateY(.5rem) rotate(45deg);/*posicion al girar linea 1*/
+  width: 3.5rem;
 }
 
-.hamburger.active .line:nth-child(2) {
-  /*animacion cruz*/
+.hamburger.active .line:nth-child(2) {    /*animacion cruz*/
   opacity: 0;
 }
 
-.hamburger.active .line:nth-child(3) {
-  transform: translateY(-.8rem) rotate(-45deg);
-  /*animacion cruz*/
-  width: 2rem;
+.hamburger.active .line:nth-child(3) {    /*animacion cruz*/
+  transform: translateY(-.8rem) rotate(-45deg); /*posicion al girar linea 3*/
+  width: 3.5rem;
 }
 
 
-.nav-list.active .nav-link {
-  /*tamaño texto links afectados*/
+.nav-list.active .nav-link {   /*tamaño texto links afectados*/
   transform: scale(1);
 }
 
-.nav-list.active .nav-item {
-  /*afecta visibilidad textos-links*/
+.nav-list.active .nav-item {   /*afecta visibilidad textos-links*/
   transition-delay: initial;
   visibility: visible;
 }
 
-.nav-list.active .nav-item:nth-child(1) .nav-link {
-  /*aparicion 1er texto izq a der*/
+.nav-list.active .nav-item:nth-child(1) .nav-link {   /*aparicion 1er texto izq a der*/
   transition-delay: .5s;
 }
 
-.nav-list.active .nav-item:nth-child(2) .nav-link {
-  /*aparicion 2o texto izq a der */
+.nav-list.active .nav-item:nth-child(2) .nav-link {   /*aparicion 2o texto izq a der */
   transition-delay: .4s;
 }
 
-.nav-list.active .nav-item:nth-child(3) .nav-link {
-  /*aparicion 3er texto izq a der*/
+.nav-list.active .nav-item:nth-child(3) .nav-link {   /*aparicion 3er texto izq a der*/
   transition-delay: .3s;
 }
 
-.nav-list.active .nav-item:nth-child(4) .nav-link {
-  /*aparicion 3er texto izq a der*/
+.nav-list.active .nav-item:nth-child(4) .nav-link {   /*aparicion 3er texto izq a der*/
   transition-delay: .2s;
 }
 
-.nav-list.active .nav-item:nth-child(5) .nav-link {
-  /*aparicion 3er texto izq a der*/
+.nav-list.active .nav-item:nth-child(5) .nav-link {   /*aparicion 3er texto izq a der*/
   transition-delay: .1s;
 }
 
 /* reverse animation */
 
-.nav-list .nav-item:nth-child(1) .nav-link {
-  /*transiciones entre textos*/
+.nav-list .nav-item:nth-child(1) .nav-link {   /*transiciones entre textos*/
   transition-delay: .1;
 }
 
-.nav-list .nav-item:nth-child(2) .nav-link {
-  /*transiciones entre textos*/
+.nav-list .nav-item:nth-child(2) .nav-link {    /*transiciones entre textos*/
   transition-delay: .2s;
 }
 
-.nav-list .nav-item:nth-child(3) .nav-link {
-  /*transiciones entre textos*/
+.nav-list .nav-item:nth-child(3) .nav-link {   /*transiciones entre textos*/
   transition-delay: .3s;
 }
 
-.nav-list .nav-item:nth-child(4) .nav-link {
-  /*transiciones entre textos*/
+.nav-list .nav-item:nth-child(4) .nav-link {   /*transiciones entre textos*/
   transition-delay: .4s;
 }
 
-.nav-list .nav-item:nth-child(5) .nav-link {
-  /*transiciones entre textos*/
+.nav-list .nav-item:nth-child(5) .nav-link {   /*transiciones entre textos*/
   transition-delay: .5s;
 }
 
 @media screen and (max-width: 768px) {
 
-  .nav-list {
-    /*NO EST.*/
-    width: 100%;
+  .nav-list {     /*NO EST.*/
+    display: flex;
+
+    width: 50%;
     height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--color2);
+    /* background-color: var(--color2); */
     position: fixed;
     left: 0;
     bottom: -100vh;
     transform: bottom 650ms;
   }
 
-  .nav-list.active {
-    /*NO EST.*/
-    bottom: 0;
+  .nav-list.active {      /*NO EST.*/
+  bottom: 0;
+  }
+  .hamburger {
+    /* Ajusta los estilos según sea necesario para pantallas más pequeñas */
+  }
+
+  header {
+    /* Ajusta los estilos según sea necesario para pantallas más pequeñas */
   }
 
 }
 
 /*=========Menú hamburguesa =============*/
 
-.header {
-  /*Mismo espacio que linea nav superior?*/
-  display: flex;
-  align-items: center;
-  background-color: var(--color4);
-  z-index: 2;
-  width: 100%;
-
-}
-
-.logo-container {
+.logo { /*logo de la pagina*/
   flex: 1;
-  margin: 20px;
+  margin-right: 10px;
+  margin-right: 20px;
   align-items: flex-start;
   text-align: start;
   align-content: center;
-
+  background-color: #dc12d9;
 }
 
-.logo {
-  /*logo de la pagina*/
-  margin-right: 10px;
-  /* Opcional: ajusta el margen según sea necesario */
-}
-
-.logo img {
-  /*logo de la pagina*/
-  max-width: 100px;
-  height: auto;
-}
-
-.language-selector {
-  /*Selector pagina*/
-  flex: 1;
+.language-selector {   /*Selector pagina*/
   display: flex;
+  flex: 1;
+  flex-direction: row;
+  height: 20px;
+  width: 30px;
+  justify-content: center;
   border-style: dashed;
   margin: 20px;
-  align-items: flex-start;
+  align-items: center;
   text-align: center;
+  border-style: double;
+  cursor: pointer;
+  background-color: #12dc19;
 
 }
-
-.language-option {
-  /*Selector pagina*/
-  flex-direction: row;
-  width: 30px;
-  height: 20px;
-  justify-content: center;
-  margin: 20px;
-  cursor: pointer;
-  border-style: double;
+.menu-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 /*=========Menú hamburguesa =============*/
@@ -337,13 +283,14 @@ nav {
 
 /*///////////////////////*****\\\\\\\\\\\\\\\\\\\\\\\\*/
 
-.container {
+.first-container {
   /* General caja 1*/
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  min-height: 100vh;
+  align-items:center;
+  justify-content: center;
   background-image: url(./images/jhj-min-2.jpg);
   background-size: cover;
   background-position: center;
@@ -351,31 +298,31 @@ nav {
   position: relative;
 }
 
-.caja1 { /*Contenedor de los textos az-vd*/  
+.caja1 { /*Contenedor de los textos az-vd*/
   background-color: rgba(255, 255, 255, 0.115);
   padding: 20px;
   box-sizing: border-box;
   max-width: 30%;
   height: 70%;
-  margin-left: 10%;/* Valor positivo para desplazar hacia la derecha */  
-  margin-bottom: 10%;/* Valor ajustable para mover la caja hacia arriba */  
-  align-self: flex-start; /* Desplazar hacia arriba */ 
+  margin-left: 10%;/* Valor positivo para desplazar hacia la derecha */
+  margin-bottom: 10%;/* Valor ajustable para mover la caja hacia arriba */
+  align-self: flex-start; /* Desplazar hacia arriba */
   text-align: center;
 }
 
-.linea1 {/*texto verde*/  
+.linea1 {/*texto verde*/
   display: flex;
   flex-direction: column;
   color: #12dc19;
   font-size: 1.25vw;
   font-weight: bold;
   margin-top: 1%;
-  
+
 
 }
 
 .linea2 {   /*texto azul*/
- 
+
   color: #083ac4;
   font-size: 3.5vw;
   margin-top: 65px;
@@ -385,77 +332,72 @@ nav {
 
 /*==========SECOND-CONTAINER=============*/
 
-.second-container {
-  /*Caja 2*/
+.second-container {  /*contenedor de la foto*/ /*Caja 2*/  
   display: flex;
-  flex-direction: row;
-  background-color: #ffffff;
-  height: 800px;
-  width: max-content;
-  float: left;
-  gap: 10px;
-}
-
-.inner-container { /*contenedor de la foto*/
-  display: flex;  
+  flex-direction:column;
   width: 100vw;
-  height: auto;
-  flex-direction: row;
+  height: 100vh;
   background-image: url(./images/1-r-architecture-rOk4VSMS3Ck-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.05);   /* Ajustar el último valor (0.5) para controlar la opacidad */
-  position: relative;
-
-}
-
-.small-container { /*contiene texto: equipo de diseño*/  
-  display: flex;
-  flex-direction: row;
-  background-color: rgba(237, 237, 237, 0.407);
-  padding: 10px;
-  width: 30%;
-  height: 70%;
-  margin-left: 60%;/* Valor positivo para desplazar hacia la derecha */  
-  align-self: flex-start;  /* Desplazar hacia arriba */
-  justify-content: center;
   position: relative;
   overflow: hidden;
 
 }
 
-.small-text { /*texto Nuestro equipo..*/  
-  flex-direction: column;
-  color: rgb(255, 255, 255);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 3.5vw;
-  position: absolute;
-  margin-top: 35px;
-  z-index: 1;
-  text-align: justify;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  
-  text-align: center;
-
-}
-
 .texto-hacemos {
-  display: flex;
-  flex-direction: row;
+  flex: 1;
   color: rgba(115, 115, 115, 0.952);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Lucida Sans Unicode',sans-serif;
   font-weight: 600;
-  font-size: 4.5vw;
-  position: absolute;/*afecta parrafo*/
-  margin-top: 50px;
+  font-size: 4vw;
+  margin-top: 1%;
   z-index: 1;
-  margin-left: 10%;
+  margin-left: 20%;
   word-wrap: break-word;
 
 }
+
+
+
+.small-container { /*Caja del texto*/
+  display:flex;
+  flex:1;
+  background-color: rgba(237, 237, 237, 0.407);
+  width: 25%;
+  height: 80%;
+  margin-left: 60%;/* Valor positivo para desplazar hacia la derecha */
+  position: absolute;
+
+
+}
+
+.small-text { /*texto Nuestro equipo..*/
+  width: 100%;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  font-family: Georgia,serif;
+  font-size: 3vw;
+  justify-content:center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 5%;
+  text-align: center;
+  box-sizing: border-box;
+
+ 
+  
+}
+
+
+
+
+
+
+
+
 
 
 /*===========INICIO CARRUSEL=============*/
@@ -478,7 +420,7 @@ nav {
 
 .carousel-images {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   /* width: 100%; */
@@ -524,7 +466,7 @@ nav {
   background-color: white; /* Ajusta el color del rectángulo  */
   margin: 5px; /* Ajusta el margen entre los rectángulos  */
   z-index: 3; /* Asegura que los rectángulos estén por encima de las imágenes */
- 
+
 }
 
 .rectangle.active {
@@ -552,7 +494,7 @@ nav {
 }
 
 .third-container::before { /* Capa pseudo-elemento para la imagen de fondo */
-  
+
   content: "";
   position: absolute;
   top: 0;
@@ -568,7 +510,7 @@ nav {
 }
 
 .inner-container2 {   /*contenedor cuadro Fondo blanco*/
- 
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -687,11 +629,11 @@ nav {
   text-align: center;
   font-family: fantasy;
   font-weight: 5;
-  font-size: 1.5vw; 
-  word-wrap: break-word; 
-  
+  font-size: 1.5vw;
+  word-wrap: break-word;
+
 }
-  
+
 #paragraph{
   display: flex;
   flex-direction:row;
@@ -755,12 +697,11 @@ nav {
 
 #text-registro{
   flex:1;
-  margin-top: 3%;
   padding:4%;
-  margin-left: -56%;
+  margin-left: -46%;
   font-size: 2vw;
-  color: rgb(32, 19, 227);  
-  
+  color: rgb(32, 19, 227);
+
 }
 
 .login {  /*cuadro contenedor del formulario*/
@@ -768,10 +709,10 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 25%;  /*ancho recuadro form*/
-  height: 58%;  /*altura recuadro form*/
+  width: 20%;  /*ancho recuadro form*/
+  height: 50%;  /*altura recuadro form*/
   z-index: 1;
-  border-radius: 1.5%;
+  border-radius: 1%;
   background-color: rgba(30, 30, 30, 0.817);
   padding: 1%;
   margin-top:4%;
@@ -789,10 +730,10 @@ nav {
   border-radius: 1%;
   font-family: 'Exo', sans-serif;
   color: #ffffff;
-  font-size:1.5vw;
+  font-size:1vw;
   padding:3%;  /*separacion texto- cuadro contenedor*/
-  
- 
+
+
 
 }
 
@@ -807,9 +748,9 @@ nav {
   border: 1px solid rgba(25, 188, 10, 0.9);
   border-radius: 1%;
   font-family: 'Exo', sans-serif;
-  font-size:1.5vw;
+  font-size:1vw;
   padding:3%;
-  
+
 
 }
 
@@ -824,7 +765,7 @@ nav {
   cursor: pointer;
   border-radius: 2px;
   font-family: 'Exo', sans-serif;
-  font-size:2vw;
+  font-size:1.5vw;
   font-weight:bold;
   color: #303130;
 
@@ -837,7 +778,7 @@ padding: 3%;
   /* Ajusta el margen superior para separarlo de los campos de texto */
 }
 
-.login input[type=button]:hover {/*Boton login*/  
+.login input[type=button]:hover {/*Boton login*/
   opacity: 0.8;
 }
 
