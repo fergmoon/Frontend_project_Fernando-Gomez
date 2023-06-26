@@ -9,35 +9,39 @@
 
   <link rel="stylesheet" type="text/css" href="./css/Styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://kit.fontawesome.com/0b9545bc74.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-  <header class="header">
+  <header>
     <nav>
-      <div class="logo">
-        <img src="./images/logo.png" alt="Logo">
+      <div>
+        <img src="./css/images/Logo DIM 2023.png" alt="" class="logo">
       </div>
-      <div class="language-selector">
-        <img src="flag-en.png" alt="English">
-        <img src="flag-es.png" alt="Spanish">
-      </div>
-      <div class="menu-container">
-        <div class="menu-wrapper">
-          <div class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" href="">home</a></li>
-            <li class="nav-item"><a class="nav-link" href="">about</a></li>
-            <li class="nav-item"><a class="nav-link" href="">videos</a></li>
-            <li class="nav-item"><a class="nav-link" href="">competences</a></li>
-            <li class="nav-item"><a class="nav-link" href="">contacts</a></li>
-          </ul>
-        </div>
-      </div>
+      <input type="checkbox" id="check">
+      <label for="check" class="bar-btn">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      <ul class="nav-menu">
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+
+      </ul>
     </nav>
+    <div class="banner_text">
+      <h2>ALL IS POSSIBLE</h2>
+      <h1>BE IN THE <span>DESIGN</span></h1>
+      <div>
+        <a href="#" class="button1">EXPLORE</a>
+        <a href="#" class="button2">BOOK NOW</a>
+      </div>
+
+    </div>
+
   </header>
 
   <div class="first-container">
@@ -163,18 +167,23 @@
 
   <div class="fourth-container">
     <div class="form-container">
-      <form class="login">
-        <p id="text-registro">Registro</p>
-        <input type="text" placeholder="Name: " name="user">
-        <input type="text" placeholder="Last name: " name="last_name">
-        <input type="text" placeholder="Phone: " name="phone">
-        <input type="text" placeholder="Email: " name="email">
-        <input type="text" placeholder="Username: " name="user"> <!-- original /se puede obviar -->
-        <input type="password" placeholder="Password: " name="password"> <!-- original -->
-        <input type="button" value="Login">
-      </form>
+      <div class="pic-form">
+        <img src="./css/images/cuadros-decorativos-salas-adazio.webp" alt="" class="pic-form">
+      </div>
+        <form class="login">
+          <p id="text-registro">Registro</p>
+          <input type="text" placeholder="Name: " name="user">
+          <input type="text" placeholder="Last name: " name="last_name">
+          <input type="text" placeholder="Phone: " name="phone">
+          <input type="text" placeholder="Email: " name="email">
+          <input type="text" placeholder="Username: " name="user"> <!-- original /se puede obviar -->
+          <input type="password" placeholder="Password: " name="password"> <!-- original -->
+          <input type="button" value="Login">
+        </form>
+      
     </div>
   </div>
+
 
 
 
@@ -202,6 +211,7 @@
   </footer>
 
   <script src="./script.js"></script>
+  <script src="https://kit.fontawesome.com/0b9545bc74.js" crossorigin="anonymous"></script>
 
 </body>
 
