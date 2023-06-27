@@ -33,12 +33,13 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* background-color: #12dc19; */
 }
 
 .logo{
-  width: 180px;
-  margin-left: 20px;
-  margin-top: 20px;
+  width:32%;
+  margin-left: 5%;
+  margin-top: 5%;
   }
 
   /*=========Menú hamburguesa =============*/
@@ -53,7 +54,7 @@ nav{
   position: fixed;
   width: 100%;
   height: 0vh;
-  top: 100px;
+  top: 15%;/*margen top -fondo menu hamburguesa*/
   background-color: rgba(0, 0, 0, .95);
   text-align:center;
   transition: all .5s;
@@ -61,15 +62,15 @@ nav{
 
 .nav-menu li{
   display: none;
-  line-height: 30px;
-  margin: 50px 0;
+  line-height: 5%;/*distancia textos desplegado*/
+  margin: 20% 0;  /*distancia textos desplegado*/
   transition: all .5s;
   
 }
 
 .nav-menu li a{
   color: #fff;
-  font-size: 16px;
+  font-size: 3vw; /*tamaño del texto menú*/
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -93,15 +94,17 @@ nav{
 
 /*BANNER TEXT*/
 .banner_text{
-  padding: 0 30px;
-  margin-top: 150px;
+  display: flex;
+  flex-direction:column ;
+  padding: 0 30%;
+  margin-top: 10%;
   text-align: center;
   color: #fff;
 }
 
 .banner_text h1{
-  font-size: 50px;
-  margin-bottom: 30px;
+  font-size: 4vw;
+  margin-bottom:5%;
 }
 
 .banner-text span{
@@ -109,36 +112,37 @@ color:rgb(248, 148, 8);
 }
 
 .banner_text h2{
-  font-size: 16px;
+  font-size: 1.5vw;
   font-weight: 600;
 }
 
 .button1{
-  margin-right: 40px;
-  padding: 10px 30px;
+  margin-right: 10%;
+  padding: .75vw 5%;  /*alto*ancho*/
   background-color: rgb(248, 148, 8);
   color: #fff;
   border-radius: 5px;
 }
 
 .button1:hover {
-  background-color:#fff ;
-  color: rgb(248, 148, 8);
-  transition: .5s;
+  background-color:#fff ;   /*color origen*/
+  color: rgb(248, 148, 8);   /*color destino*/
+  transition: .5s;  /*tiempo*/
 }
 
 .button2{
-  margin-right: 40px;
-  padding: 10px 30px;
+  margin-right: 10%;
+  padding: .75vw 5%;
   background-color:#fff;
   color:rgb(248, 148, 8);
   border-radius: 5px;
 }
 
 .button2:hover {
-  background-color:rgb(248, 148, 8);
-  color: #fff;
-  transition: .5s;
+  background-color:rgb(248, 148, 8);  /*color origen*/
+  color: #fff;                        /*color destino*/
+  transition: .5s;                       /*tiempo*/
+  
 }
 
 /*RESPONSIVE PARA DESKTOP*/
@@ -165,8 +169,8 @@ color:rgb(248, 148, 8);
 
   .nav-menu li{
     display: inline-block;
-    line-height: 100px;
-    margin: 0 20px;
+    line-height: 2%;
+    margin: 10% 2%;/*margen top-separación textos*/
     transition: none;
   }
 
@@ -186,33 +190,14 @@ color:rgb(248, 148, 8);
 }
 
 
-
-
 /*=========FIN HEADER =============*/
 
 
-/*.language-selector {   Selector pagina*/
-  /* display: flex;
-  flex: 1;
-  flex-direction: row;
-  height: 20px;
-  width: 30px;
-  justify-content: center;
-  border-style: dashed;
-  margin: 20px;
-  align-items: center;
-  text-align: center;
-  border-style: double;
-  cursor: pointer;
-  background-color: #12dc19;
-
-} */
 
 
-/*=========First Box =============*/
 
+/*=========COMIENZO FIRST CONTAINER =============*/
 
-/*///////////////////////*****\\\\\\\\\\\\\\\\\\\\\\\\*/
 
 .first-container {
   /* General caja 1*/
@@ -220,9 +205,7 @@ color:rgb(248, 148, 8);
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content: center;
-  background-image: url(https://img.freepik.com/fotos-premium/diseno-interiores-estilo-loft-ilustracion-ai-generativexa_115919-12854.jpg);
+  background-image: url(./images/don-kaveen-p2u7eu00DCA-unsplash.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -230,33 +213,35 @@ color:rgb(248, 148, 8);
 }
 
 .caja1 { /*Contenedor de los textos az-vd*/
-  background-color: rgba(255, 255, 255, 0.115);
-  padding: 20px;
+  background-color: rgba(12, 26, 221, 0.811);
+  padding: 2%;
   box-sizing: border-box;
   max-width: 30%;
-  height: 70%;
-  margin-left: 10%;/* Valor positivo para desplazar hacia la derecha */
-  margin-bottom: 10%;/* Valor ajustable para mover la caja hacia arriba */
-  align-self: flex-start; /* Desplazar hacia arriba */
+  height: 80%;
+  margin-left:10%;/* mover izq*/  
   text-align: center;
+
 }
 
 .linea1 {/*texto verde*/
   display: flex;
   flex-direction: column;
-  color: #12dc19;
-  font-size: 1.25vw;
-  font-weight: bold;
-  margin-top: 1%;
-
+  color: rgb(13, 219, 20);
+  font-size: 1vw;
+  margin-top: 20%;
+  font-family: "Montserrat",sans-serif;
+  font-weight: 300;
+  z-index: 2;
 
 }
 
 .linea2 {   /*texto azul*/
-
-  color: #083ac4;
+  color: #ffffff;
   font-size: 3.5vw;
-  margin-top: 65px;
+  margin-top: 10%;
+  font-weight: 600;
+  font-family: "Montserrat",sans-serif;
+
 
 
 }
@@ -272,63 +257,46 @@ color:rgb(248, 148, 8);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  position: relative;
-  overflow: hidden;
-
 }
 
 .texto-hacemos {
   flex: 1;
-  color: rgba(115, 115, 115, 0.952);
-  font-family: 'Lucida Sans Unicode',sans-serif;
-  font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
+  font-family: "Montserrat",sans-serif;
   font-size: 4vw;
-  margin-top: 1%;
+  font-weight: 600;
+  margin-top: 1.5%;
   z-index: 1;
   margin-left: 20%;
-  word-wrap: break-word;
-
 }
 
 
 
 .small-container { /*Caja del texto*/
-  display:flex;
   flex:1;
-  background-color: rgba(237, 237, 237, 0.407);
+  background-color: rgba(19, 174, 13, 0.575);
   width: 25%;
   height: 80%;
-  margin-left: 60%;/* Valor positivo para desplazar hacia la derecha */
+  padding: .75%;
+  margin-left: 65%;/* Valor positivo para desplazar hacia la derecha */
   position: absolute;
-
-
+  justify-content: center;
+  align-items: center;
 }
 
 .small-text { /*texto Nuestro equipo..*/
   width: 100%;
   height: 100%;
   color: rgb(255, 255, 255);
-  font-family: Georgia,serif;
-  font-size: 3vw;
+  font-family: "Montserrat",sans-serif;
+  font-size: 2.75vw;
   justify-content:center;
-  align-items: center;
+  align-self: center;
   position: relative;
   z-index: 1;
-  padding: 5%;
-  text-align: center;
-  box-sizing: border-box;
-
- 
-  
+  padding: 4%;
+  box-sizing: border-box;  
 }
-
-
-
-
-
-
-
-
 
 
 /*===========INICIO CARRUSEL=============*/
@@ -342,11 +310,9 @@ color:rgb(248, 148, 8);
   align-items: center;
   width: 100vw; /* Ajusta el ancho de la imagen al contenedor */
   height: 100vh;
-  max-height: 350px;  /*Ajusta la altura de la imagen proporcionalmente */
-  /*object-fit: cover;  Ajusta el tamaño de la imagen para que cubra completamente el contenedor */
+  max-height: 400px;  /*Ajusta la altura de la imagen proporcionalmente */
   overflow-x: hidden;
   flex-wrap: nowrap; /* Evita que las imágenes y rectángulos se envuelvan en filas */
-
 }
 
 .carousel-images {
@@ -614,7 +580,7 @@ color:rgb(248, 148, 8);
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url(https://images.unsplash.com/photo-1643267514395-b36b3f7e8281?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80);
+  background-image: url(https://cdn.shortpixel.ai/spai/q_lossy+w_1233+to_auto+ret_img/https://adaziodesign.com/wp-content/uploads/2022/01/ideas-creativas-scaled.jpg);
   justify-content: center;
   align-items: center;
 
@@ -624,10 +590,12 @@ color:rgb(248, 148, 8);
   display: flex;
   width: 40%;
   height: 45%;
-  background-color: rgba(255, 255, 255, .25);
+  background-color: rgba(255, 255, 255, .1);
   margin-top: -20%;
   align-items: 10%;
   align-self: center;
+  margin-left:18%;
+  margin-top:-26%;
 
 }
 
@@ -643,6 +611,7 @@ color:rgb(248, 148, 8);
   margin-left: 25%;
   font-size: 2vw;
   color: rgb(32, 19, 227);
+  font-weight: 600;
 
 }
 
@@ -652,7 +621,7 @@ color:rgb(248, 148, 8);
   width: 15%;  /*ancho recuadro form*/
   height: 90.5%;  /*altura recuadro form*/
   z-index: 1;
-  background-color: rgba(30, 30, 30, 0.817);
+  background-color: rgba(30, 30, 30, 0.5);
   margin-top: 2.7%;
 
 

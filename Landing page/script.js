@@ -1,9 +1,4 @@
 
-//=========comienzo Menú hamburguesa=========
-
-//========fin menú hamburguesa===============
-
-
 //=========comienzo carrusel=========
 
 const rectangles = document.querySelectorAll('.rectangle');
