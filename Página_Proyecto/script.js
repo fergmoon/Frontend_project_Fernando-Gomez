@@ -1,4 +1,4 @@
-
+console.log("Loading Javascript del Proyecto Dimenzionar...")
 //=========comienzo carrusel=========
 
 const rectangles = document.querySelectorAll('.rectangle');
