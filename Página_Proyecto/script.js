@@ -1,4 +1,73 @@
 console.log("Loading Javascript del Proyecto Dimenzionar...")
+
+function saveUser (){
+
+  let nameUser = document.getElementById("name");
+  let last_nameUser = document.getElementById("last_name");
+  let phoneUser = document.getElementById("phone");
+  let e_mailUser = document.getElementById("e_mail");
+  let user_nameUser = document.getElementById("user_name");
+  let passwordUser = document.getElementById("password");
+
+
+  let user = {
+    name:nameUser.value,
+    last_name:last_nameUser.value,
+    phone:phoneUser.value,
+    e_mail:e_mailUser.value,
+    user_name:user_nameUser.value,
+    password:passwordUser.value
+  }
+
+  console.log(user);
+  
+  let url ="http://localhost:8000/api/user"; //url en postman
+
+  fetch(url,{
+    method:"POST",
+    headers:{
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(user),
+  }).then(response =>{
+
+    console.log(response);
+
+})
+
+
+
+
+
+
+alert("Creación de usuario")
+
+
+  return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*==*==*==*==*==*==*==*==*==*==*==*==*==*==*==*==*==*
+/*ANIMACIONES  Y  EFECTOS DE PAGINA*/
+
 //=========comienzo carrusel=========
 
 const rectangles = document.querySelectorAll('.rectangle');

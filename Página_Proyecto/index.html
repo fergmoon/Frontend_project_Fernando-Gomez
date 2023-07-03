@@ -7,9 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DIMENZIONAR DISEÑO SAS</title>
 
-  <link rel="stylesheet" type="text/css" href="./css/Styles.css">
+    
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script src="https://kit.fontawesome.com/0b9545bc74.js" crossorigin="anonymous"></script>
+    
+  <link rel="stylesheet" type="text/css" href="./css/Styles.css">
 
 </head>
 
@@ -169,17 +172,21 @@
     <div class="form-container">
       <form class="login">
         <p id="text-registro">Registro</p>
-        <input type="text" placeholder="Name: " name="user">
-        <input type="text" placeholder="Last name: " name="last_name">
-        <input type="text" placeholder="Phone: " name="phone">
-        <input type="text" placeholder="Email: " name="email">
-        <input type="text" placeholder="Username: " name="user"> <!-- original /se puede obviar -->
-        <input type="password" placeholder="Password: " name="password"> <!-- original -->
-        <input type="button" value="Login">
-      </form>           
-       
-        <img class="pic-form" src="./css/images/cuadros-decorativos-salas-adazio.webp" alt="imágen-form">
-      
+        <!-- <label for="name">Nombre usuario</label> -->
+        <input type="text" placeholder="Name: " id="name" name="user" class="validate">
+        <input type="text" placeholder="Last name: " id="last_name" name="last_name" class="validate">
+        <input type="text" placeholder="Phone: "  id="phone" name="phone" class="validate">
+        <input type="text" placeholder="Email: " id="e_mail" name="e_mail" class="validate">
+        <input type="text" placeholder="Username: "  id="user_name" name="user" class="validate"> <!-- original /se puede obviar -->
+        <input type="password" placeholder="Password: " id="password" name="password" class="validate"> <!-- original -->
+        <input type="button" id="login" onclick="saveUser()" value="Login">
+        <!-- <div>
+          <button class="btn " type="button" id="save" name="action">Guardar usuario
+            <i class="material-icons right"></i>
+          </button>
+        </div> -->
+      </form>    
+        <img class="pic-form" src="./css/images/cuadros-decorativos-salas-adazio.webp" alt="imágen-form">     
     </div>
   </div>
 
