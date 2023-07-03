@@ -21,32 +21,69 @@ function saveUser (){
 
   console.log(user);
   
-  let url ="http://localhost:8000/api/user"; //url en postman
+  let url ="http://localhost:8000/api/user";
 
-  fetch(url,{
+
+
+  fetch(url,{                        //url en postman
     method:"POST",
-    headers:{
+    headers:{                      //enviar header
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(user),
-  }).then(response =>{
+    body: JSON.stringify(user),    //enviar body en json
+  }).then(response =>{             //respuesta
 
-    console.log(response);
+    console.log(response.json());
 
+    if(response.status== 200){
+
+      alert("Creación Exitosa de Usuario");
+      
+    }else{
+
+      alert("Error creando usuario");
+
+    }
+
+
+}).then(result=>{
+
+    console.log(result);
 })
 
 
-
-
-
-
-alert("Creación de usuario")
+// alert("Creación de usuario")
 
 
   return true;
 }
 
+//===============CONSULTAR USUARIOS======================
 
+
+
+function getUsers(){
+
+  let url="http://localhost:8000/api/users";
+
+  let params = {
+    METHOD:"GET",
+    headers:{   //solo header. No body por que no se envían datos en la petición
+      "Content-Type":"application json"
+    },
+  }
+
+  fetch(url,params).then((response)=>{
+
+    console.log(response);
+
+    console.log(response.json());
+
+  });
+
+
+  return true;
+}
 
 
 
