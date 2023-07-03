@@ -576,58 +576,59 @@ color:rgb(248, 148, 8);
 
 .fourth-container {/*contenedor de todo*/
   display: flex;
-    width: 100vw;
+  width: 100vw;
   height: 100vh;
   background-image: url(https://cdn.shortpixel.ai/spai/q_lossy+w_1233+to_auto+ret_img/https://adaziodesign.com/wp-content/uploads/2022/01/ideas-creativas-scaled.jpg);
   justify-content: center;
   align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
 }
 
 .form-container {  /*contenedor formulario y foto*/
-
-  display: flex;
-  flex-direction:row;
-  float: left;
-  width: 50%;
-  height: 60%;
-
+  display: flex;  
+  width: 40%;  
+  height: 45%;
   align-items: center;
-
   background-color: rgba(255, 255, 255, .1);
+  margin-bottom: 23%;
+  margin-left: 35%;
+  padding: 1%;
 }
 
 .pic-form{
   flex: 1;
-  width: 50%;
-  height: auto;
+  height: 100%;
+  width: auto;
+  border-style: dotted;  
 
 }
 
 #text-registro{
-
   font-size: 2vw;
   color: rgb(32, 19, 227);
   font-weight: 600;
+  padding: 4%;
 
 }
 
 .login {  /*cuadro contenedor del formulario*/
-  flex: 1;
-  width: 100%;  /*ancho recuadro form*/
-  height: 100%;  /*altura recuadro form*/
-  z-index: 1;  
-  background-color: rgba(30, 30, 30, 0.5);
-  
 
+  flex: 1;
+  z-index: 10;  
+  background-color: rgba(0, 0, 0, 0.5);
+  border-style: double;
+  height: 100%;
+  align-items: center;
 
 }
 
-.login input[type=text] {  /*casillas todas - pass*/
-  display: flex;
+.login input[type=text] {  /*recuadros casillas name - pass*/
+  
   width: 90%;
-  height: 10%;
-  justify-content: center;
+  height: 10%;  
   background: transparent;
   border: 1px solid hsla(120, 93%, 38%, 0.9);
   border-radius: 1%;
@@ -640,9 +641,7 @@ color:rgb(248, 148, 8);
 
 }
 
-.login input[type=password] {   /*casilla password*/
-  display: flex;
-  flex: 1;
+.login input[type=password] {   /*recuadro casilla password*/
   width: 90%;
   height: 10%;
   justify-content: center;
