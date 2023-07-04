@@ -1,226 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIMENZIONAR DISEÑO SAS</title>
-
-    
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-  <link rel="stylesheet" type="text/css" href="./css/Styles.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
 </head>
-
 <body>
-  <header>
-    <nav>
-      <div>
-        <img src="./css/images/Logo DIM 2023.png" alt="" class="logo">
-      </div>
-      <input type="checkbox" id="check">
-      <label for="check" class="bar-btn">
-        <i class="fa-solid fa-bars"></i>
-      </label>
-      <ul class="nav-menu">
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
-
-      </ul>
-    </nav>
-    <div class="banner_text">
-      <h2>ALL IS POSSIBLE</h2>
-      <h1>BE IN THE <span>DESIGN</span></h1>
-      <div>
-        <a href="#" class="button1">EXPLORE</a>
-        <a href="#" class="button2">BOOK NOW</a>
-      </div>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
     </div>
+  
+    <script src="./script_index.js"></script>
 
-  </header>
-
-  <div class="first-container">
-    <div class="caja1">
-      <p class="linea1">ESPACIO. ESTILO. SENSACIÓN. USTED.</p>
-      <p class="linea2">Permítanos crear algo maravilloso :
-        un diseño que es
-        todo para usted.</p>
-    </div>
-  </div>
-
-  <div class="second-container">
-    <h2 class="texto-hacemos">Que hacemos...</h2>
-    <div class="small-container">
-      <p class="small-text">
-        Nuestro equipo de diseño
-        trabaja codo con codo con la producción,
-        y esta sinergia orgánica permite la creación
-        de diseños innovadores.</p>
-    </div>
-  </div>
-
-  <section>
-    <div class="carousel-container">
-      <div class="rectangle-layer">
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle"></div>
-        <!-- Agrega tantos rectángulos como imágenes tengas en el carrusel -->
-      </div>
-      <div class="carousel-images">
-        <img class="carousel-image" src="./css/images/dan-gold-4HG3Ca3EzWw-unsplash.jpg" alt="Imagen 1">
-        <img class="carousel-image" src="./images/jens-kreuter-ngMtsE5r9eI-unsplash.jpg" alt="Imagen 2">
-        <img class="carousel-image" src="./css/images/kumpan-electric-SYo5eazBrls-unsplash.jpg" alt="Imagen 3">
-        <img class="carousel-image" src="./css/images/pat-whelen-MIGILwnvEh0-unsplash.jpg" alt="Imagen 4">
-        <img class="carousel-image" src="./css/images/pat-whelen-MIGILwnvEh0-unsplash.jpg" alt="Imagen 5">
-        <img class="carousel-image" src="./css/images/pat-whelen-MIGILwnvEh0-unsplash.jpg" alt="Imagen 6">
-        <img class="carousel-image" src="./css/images/pat-whelen-MIGILwnvEh0-unsplash.jpg" alt="Imagen 7">
-        <img class="carousel-image" src="./css/images/pat-whelen-MIGILwnvEh0-unsplash.jpg" alt="Imagen 8">
-        <img class="carousel-image" src="./css/images/pat-whelen-MIGILwnvEh0-unsplash.jpg" alt="Imagen 9">
-        <img class="carousel-image" src="./css/images/pat-whelen-MIGILwnvEh0-unsplash.jpg" alt="Imagen 10">
-        <img class="carousel-image" src="./css/images/pat-whelen-MIGILwnvEh0-unsplash.jpg" alt="Imagen 11">
-        <img class="carousel-image" src="./images/pat-whelen-MIGILwnvEh0-unsplash.jpg" alt="Imagen 12">
-      </div>
-    </div>
-
-  </section>
-
-  <div class="third-container">
-    <h3>Tercer Contenedor</h3>
-    <div class="inner-container2">
-      <div class="sub-container">
-        <div class="square">
-          <div class="inner-box-1">
-            <!-- <p>Contenido del cuadro 1</p> -->
-          </div>
-        </div>
-        <div class="square">
-          <div class="inner-box-2">
-
-            <h3 class="Text-square">Planificación</h3>
-            <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fuga praesentium ut
-              iste
-              nesciunt ad nulla temporibus hic veniam numquam.</p>
-          </div>
-        </div>
-        <div class="square">
-          <div class="inner-box-3">
-            <!-- <p>Contenido del cuadro 3</p> -->
-          </div>
-        </div>
-        <div class="square">
-          <div class="inner-box-4">
-            <h3 class="Text-square">Mobiliario</h3>
-            <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fuga praesentium ut
-              iste
-              nesciunt ad nulla temporibus hic veniam numquam.</p>
-          </div>
-        </div>
-        <div class="square">
-          <div class="inner-box-5">
-            <!-- <p>Contenido del cuadro 5</p> -->
-          </div>
-        </div>
-        <div class="square">
-          <div class="inner-box-6">
-            <h3 class="Text-square">Diseño Acogedor</h3>
-            <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fuga praesentium ut
-              iste
-              nesciunt ad nulla temporibus hic veniam numquam.</p>
-          </div>
-        </div>
-        <div class="square">
-          <div class="inner-box-7">
-            <!-- <p>Contenido del cuadro 7</p> -->
-          </div>
-        </div>
-        <div class="square">
-          <div class="inner-box-8">
-            <h3 class="Text-square">Conceptos de calidad</h3>
-            <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias fuga praesentium ut
-              iste
-              nesciunt ad nulla temporibus hic veniam numquam.</p>
-          </div>
-        </div>
-        <div class="square">
-          <div class="inner-box-9">
-            <!-- <p>Contenido del cuadro 9</p> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="fourth-container">
-    <div class="form-container">
-      <form class="login">
-        <p id="text-registro">Registro</p>
-        <!-- <label for="name">Nombre usuario</label> -->
-        <input type="text" placeholder="Name: " id="name" name="user" class="validate">
-        <input type="text" placeholder="Last name: " id="last_name" name="last_name" class="validate">
-        <input type="text" placeholder="Phone: "  id="phone" name="phone" class="validate">
-        <input type="text" placeholder="Email: " id="e_mail" name="e_mail" class="validate">
-        <input type="text" placeholder="Username: "  id="user_name" name="user" class="validate"> <!-- original /se puede obviar -->
-        <input type="password" placeholder="Password: " id="password" name="password" class="validate"> <!-- original -->
-        <input type="button" id="login" onclick="saveUser()" value="Login">
-      </form>    
-        <img class="pic-form" src="./css/images/cuadros-decorativos-salas-adazio.webp" alt="imágen-form">     
-    </div>
-    <div>
-      <input type="button" id="login" onclick="getUsers()" value="Consultar">
-    </div>
-    <div>
-      <input type="button" id="login" onclick="getUser()" value="Actualizar">
-    </div>
-    <div>
-      <input type="button" id="login" onclick="deleteUser()" value="Eliminar">
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="container-footer">
-      <div class="footer-item">
-        <h3>Ubicación</h3>
-        <p>123 Calle Principal, Ciudad</p>
-        <p>Estado, Código Postal</p>
-      </div>
-      <div class="footer-item">
-        <h3>Contacto</h3>
-        <p>Teléfono: 123-456-7890</p>
-        <p>Email: info@dimenzionar.com</p>
-      </div>
-      <div class="footer-item">
-        <h3>Síguenos</h3>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <script src="https://kit.fontawesome.com/0b9545bc74.js" crossorigin="anonymous"></script>
-  <script src="./script.js"></script>
-
+    
 </body>
-
 </html>
