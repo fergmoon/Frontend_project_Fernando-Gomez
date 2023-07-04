@@ -1,5 +1,34 @@
 console.log("Loading Javascript del Proyecto Dimenzionar...")
 
+//============== FLECHA ARRIBA  =====================
+$(document).ready(function(){
+
+  $('.ir-arriba').click(function(){
+
+    $('body,html').animate({
+
+      scrollTop:'0px'
+
+    },300);
+
+  }); 
+  
+  $(window).scroll(function(){
+
+    if( $(this).scrollTop() > 0){
+
+      $ ('.ir-arriba').slideDown(300);
+
+    }else{
+
+      $ ('.ir-arriba').slideUp(300);
+    }
+  });
+});
+
+
+/* =============   API s   ==================== */
+
 function saveUser() {
 
   let nameUser = document.getElementById("name");
@@ -83,12 +112,65 @@ function getUsers() {
   return true;
 }
 
+
+//===============ELIMINAR USUARIO======================//
+
+function deleteUser(){
+
+  let nameUser = document.getElementById("name");
+  let last_nameUser = document.getElementById("last_name");
+
+  let user = {
+    name: nameUser.value,
+    last_name: last_nameUser.value,
+  }
+
+  let url = "http://localhost:80007api/user?id=";
+
+  let params = {
+    METHOD: "DELETE",
+    headers:{
+      "Content Type": "application json"
+    },
+    body:JSON.stringify(user),
+  }
+
+  console.log(user);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //===============ACTUALIZAR USUARIOS======================
+//XXXXXXXXXOOOOOOOOOOOOOOOXXXXXXXXXXXXXXXXXXXOOOOOOOOOOOOOOOOOXXXXXXXX
 
+function getUser() {     //PENDIENTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-function getUser() {
-
-  let url = "http://localhost:8000/api/user?id=1";
+  let url = "http://localhost:8000/api/user?id=";
 
   let params = {
     METHOD: "GET",
@@ -107,10 +189,19 @@ function getUser() {
 
   return true;
 }
+//OXOXOXOXXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXXOXOOXOXOXOXOXOXOXOXOX
 
 
 
-//===============ELIMINAR USUARIO======================
+
+
+
+
+
+
+
+
+
 
 
 
