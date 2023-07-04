@@ -1,6 +1,6 @@
 console.log("Loading Javascript del Proyecto Dimenzionar...")
 
-function saveUser (){
+function saveUser() {
 
   let nameUser = document.getElementById("name");
   let last_nameUser = document.getElementById("last_name");
@@ -11,48 +11,48 @@ function saveUser (){
 
 
   let user = {
-    name:nameUser.value,
-    last_name:last_nameUser.value,
-    phone:phoneUser.value,
-    e_mail:e_mailUser.value,
-    user_name:user_nameUser.value,
-    password:passwordUser.value
+    name: nameUser.value,
+    last_name: last_nameUser.value,
+    phone: phoneUser.value,
+    e_mail: e_mailUser.value,
+    user_name: user_nameUser.value,
+    password: passwordUser.value
   }
 
   console.log(user);
-  
-  let url ="http://localhost:8000/api/user";
+
+  let url = "http://localhost:8000/api/user";
 
 
 
-  fetch(url,{                        //url en postman
-    method:"POST",
-    headers:{                      //enviar header
+  fetch(url, {                        //url en postman
+    method: "POST",
+    headers: {                      //enviar header
       "Content-Type": "application/json"
     },
     body: JSON.stringify(user),    //enviar body en json
-  }).then(response =>{             //respuesta
+  }).then(response => {             //respuesta
 
     console.log(response.json());
 
-    if(response.status== 200){
+    if (response.status == 200) {
 
       alert("Creación Exitosa de Usuario");
-      
-    }else{
+
+    } else {
 
       alert("Error creando usuario");
 
     }
 
 
-}).then(result=>{
+  }).then(result => {
 
     console.log(result);
-})
+  })
 
 
-// alert("Creación de usuario")
+  // alert("Creación de usuario")
 
 
   return true;
@@ -61,19 +61,18 @@ function saveUser (){
 //===============CONSULTAR USUARIOS======================
 
 
+function getUsers() {
 
-function getUsers(){
-
-  let url="http://localhost:8000/api/users";
+  let url = "http://localhost:8000/api/users";
 
   let params = {
-    METHOD:"GET",
-    headers:{   //solo header. No body por que no se envían datos en la petición
-      "Content-Type":"application json"
+    METHOD: "GET",
+    headers: {   //solo header. No body por que no se envían datos en la petición
+      "Content-Type": "application json"
     },
   }
 
-  fetch(url,params).then((response)=>{
+  fetch(url, params).then((response) => {
 
     console.log(response);
 
@@ -81,9 +80,54 @@ function getUsers(){
 
   });
 
+  return true;
+}
+
+//===============ACTUALIZAR USUARIOS======================
+
+
+function getUser() {
+
+  let url = "http://localhost:8000/api/user?id=1";
+
+  let params = {
+    METHOD: "GET",
+    headers: {   //solo header. No body por que no se envían datos en la petición
+      "Content-Type": "application json"
+    },
+  }
+
+  fetch(url, params).then((response) => {
+
+    console.log(response);
+
+    console.log(response.json());
+
+  });
 
   return true;
 }
+
+
+
+
+
+
+//===============ELIMINAR USUARIO======================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -163,3 +207,9 @@ window.addEventListener('resize', () => {
 
 //=========Fin carrusel=========
 
+let nameUser = document.getElementById("name");
+let last_nameUser = document.getElementById("last_name");
+let phoneUser = document.getElementById("phone");
+let e_mailUser = document.getElementById("e_mail");
+let user_nameUser = document.getElementById("user_name");
+let passwordUser = document.getElementById("password");
