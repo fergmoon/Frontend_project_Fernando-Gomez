@@ -135,8 +135,51 @@ function deleteUser(){
 
   console.log(user);
 
-
-
-
-
 }
+
+
+    // Resultados de ejemplo obtenidos de la API
+    const results = [
+        {
+          name: 'John',
+          last_name: 'Doe',
+          age: 30
+        },
+        {
+          name: 'Jane',
+          last_name: 'Smith',
+          age: 25
+        },
+        {
+          name: 'Mike',
+          last_name: 'Johnson',
+          age: 35
+        }
+      ];
+  
+      // Obtener el contenedor de resultados
+      const resultsContainer = document.getElementById('results-container');
+  
+      // Crear un elemento de lista desordenada
+      const ulElement = document.createElement('ul');
+  
+      // Mostrar los resultados en la interfaz
+      results.forEach(result => {
+        const liElement = document.createElement('li');
+        liElement.className = 'result';
+  
+        const nameElement = document.createElement('h3');
+        nameElement.textContent = result.name;
+  
+        const lastNameElement = document.createElement('p');
+        lastNameElement.textContent = result.last_name;
+  
+        const ageElement = document.createElement('p');
+        ageElement.textContent = 'Age: ' + result.age;
+  
+        liElement.appendChild(nameElement);
+        liElement.appendChild(lastNameElement);
+        liElement.appendChild(ageElement);
+  
+        ulElement.appendChild(liElement);
+      });

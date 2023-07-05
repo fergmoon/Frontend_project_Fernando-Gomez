@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
 </head>
+
 <body>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="./css/styles_index.css">
-  </head>
-  
-  <body class="background">
-    <div class="container">
-      <h1>Login</h1>
-      <form id="login-form">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-      </form>
-      <br>
-      <br>
-      <div>
-        <input type="button" id="login" onclick="getUsers()" value="Consultar">
-      </div>
-      <br>
-      <div>
-        <input type="button" id="login" onclick="getUser()" value="Actualizar">
-      </div>
-      <br>
-      <div>
-        <input type="button" id="login" onclick="deleteUser()" value="Eliminar">
-      </div>
-    </div>
-    </div>
-  
-    <script src="./script_index.js"></script>
+    </head>
 
-    
-</body>
+    <body class="background">
+        <div class="container">
+            <h1>Login</h1>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <h1>Resultados de la API</h1>
+
+            <div id="results-container" class="results-container">
+                <div class="result">
+                    <h3>Registro 1</h3>
+                    <p>Nombre: John Doe</p>
+                    <p>Apellido: Doe</p>
+                </div>
+                <div class="result">
+                    <h3>Registro 2</h3>
+                    <p>Nombre: Jane Smith</p>
+                    <p>Apellido: Smith</p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <br>
+        <br>
+        <div>
+            <input type="button" id="login" onclick="getUsers()" value="Consultar">
+        </div>
+        <br>
+        <div>
+            <input type="button" id="login" onclick="getUser()" value="Actualizar">
+        </div>
+        <br>
+        <div>
+            <input type="button" id="login" onclick="deleteUser()" value="Eliminar">
+        </div>
+        </div>
+        </div>
+
+        <script src="./script_index.js"></script>
+
+
+    </body>
+
 </html>

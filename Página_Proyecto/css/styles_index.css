@@ -19,9 +19,9 @@
 .container {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
-    padding: 10%;
+    padding: 2%;
     text-align: center;
 
   }
@@ -53,4 +53,38 @@
     font-size: 1.25vw;
   }
 
-  
+  #login{
+    width: 400px;
+    justify-content: ;
+    
+  }
+
+  .results-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px; /*tamaño ventana*/
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.result {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.result h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.result p {
+    margin: 0;
+    color: #666;
+}
+
