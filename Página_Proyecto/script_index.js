@@ -85,14 +85,13 @@ function saveUser() {
   return true;
 }
 
-//===============CONSULTAR USUARIOS======================
-
+//===============CONSULTAR USUARIOS======================//
 
 function getUsers() {
+    
+    let url = "http://localhost:8000/api/users";
 
-  let url = "http://localhost:8000/api/users";
-
-  let params = {
+    let params = {
     METHOD: "GET",
     headers: {   //solo header. No body por que no se envían datos en la petición
       "Content-Type": "application json"
@@ -101,23 +100,140 @@ function getUsers() {
 
   fetch(url, params).then((response) => {
 
-    console.log(response);
-
-    console.log(response.json());
+    console.log(response);    
 
   });
 
   return true;
 }
 
+//===============CONSULTAR UNICO USUARIO======================//
+
+function getUser() {
+
+    let id = document.getElementById("id").value;
+    
+    let url = "http://localhost:8000/api/user?id=" + id;
+
+    let params = {
+        METHOD: "GET",
+        headers: {   //solo header. No body por que no se envían datos en la petición
+        "Content-Type": "application json"
+        },        
+  }
+
+  fetch(url,params)
+  
+    .then((response) => response.json())    
+
+    .then((data)=>{
+
+        console.log(data);
+        document.getElementById("name").value = data.name;
+        document.getElementById("last_name").value = data.last_name;
+        document.getElementById("phone").value = data.phone;
+        document.getElementById("e_mail").value = data.e_mail;
+        document.getElementById("user_name").value = data.user_name;
+        document.getElementById("password").value = data.password;
+
+    })
+  .catch((error)=>{
+
+    console.log(error);
+  });
+
+  return false;  // Evitar que el formulario se envíe y la página se recargue
+
+  }
+
+
+  //===============ACTUALIZAR USUARIO======================//
+
+  function updateUser() {
+
+    let id = document.getElementById("id").value;
+    let name = document.getElementById("name").value;
+    let lastname = document.getElementById("last_name").value;
+    let phone = document.getElementById("phone").value;
+    let e_mail = document.getElementById("e_mail").value;
+    let username = document.getElementById("user_name").value;
+    let password = document.getElementById("password").value;
+
+    let url = "http://localhost:8000/api/user?id=" + id;
+
+    let params = {
+        method:"PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            last_name: lastname,
+            phone: phone,
+            e_mail: e_mail,
+            user_name: username,
+            password:password,
+        })
+    };
+
+    fetch(url, params)
+    .then((response) => response.json())
+    .then((data) => {
+      // Actualizar campos del formulario con los datos recibidos
+      document.getElementById("name").value = data.user.name;
+      document.getElementById("last_name").value = data.user.last_name;
+      // Actualizar los demás campos si es necesario
+
+      // Mostrar mensaje de éxito o confirmación
+      console.log("Actualización exitosa");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //===============ELIMINAR USUARIO======================//
 
-function deleteUser(){
+function deleteUser(name,last_name){
 
   let nameUser = document.getElementById("name");
   let last_nameUser = document.getElementById("last_name");
 
+  
   let user = {
     name: nameUser.value,
     last_name: last_nameUser.value,
@@ -135,51 +251,15 @@ function deleteUser(){
 
   console.log(user);
 
+  fetch(url,params).then((response)=>{
+
+    console.log("Usuario Eliminado")
+    console.log(response.json());
+
+    
+  });
+
 }
 
+  
 
-    // Resultados de ejemplo obtenidos de la API
-    const results = [
-        {
-          name: 'John',
-          last_name: 'Doe',
-          age: 30
-        },
-        {
-          name: 'Jane',
-          last_name: 'Smith',
-          age: 25
-        },
-        {
-          name: 'Mike',
-          last_name: 'Johnson',
-          age: 35
-        }
-      ];
-  
-      // Obtener el contenedor de resultados
-      const resultsContainer = document.getElementById('results-container');
-  
-      // Crear un elemento de lista desordenada
-      const ulElement = document.createElement('ul');
-  
-      // Mostrar los resultados en la interfaz
-      results.forEach(result => {
-        const liElement = document.createElement('li');
-        liElement.className = 'result';
-  
-        const nameElement = document.createElement('h3');
-        nameElement.textContent = result.name;
-  
-        const lastNameElement = document.createElement('p');
-        lastNameElement.textContent = result.last_name;
-  
-        const ageElement = document.createElement('p');
-        ageElement.textContent = 'Age: ' + result.age;
-  
-        liElement.appendChild(nameElement);
-        liElement.appendChild(lastNameElement);
-        liElement.appendChild(ageElement);
-  
-        ulElement.appendChild(liElement);
-      });
