@@ -1,7 +1,6 @@
 console.log("Loading script_index...")
 
 
-
 /*========== FORMULARIO INGRESO INDEX =================*/
 
 
@@ -14,10 +13,10 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   
     // Realizar la validación de las credenciales
     if (username === 'admin' && password === 'admin') {
-      // Redirige al usuario a la página de admini
+      // Redirige al usuario a la página de admin---Falta hacerla =(
       
       administrador
-      window.location.href = 'admin.html';
+      window.location.href = 'admin.html';   //Falta hacerla =(
     } else {
       // Redirige al usuario a la página de visitantes
       window.location.href = 'DimWebpage.html';
@@ -190,76 +189,73 @@ function getUser() {
     .catch((error) => {
       console.log(error);
     });
-
-
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //===============ELIMINAR USUARIO======================//
 
-function deleteUser(name,last_name){
+function deleteUser(){
 
-  let nameUser = document.getElementById("name");
-  let last_nameUser = document.getElementById("last_name");
+    let id = document.getElementById("id").value;
+    let url = 'http://localhost:8000/api/user?id=' + id;
 
+    let params = {
+    method: "DELETE",
+    };
   
-  let user = {
-    name: nameUser.value,
-    last_name: last_nameUser.value,
-  }
+  fetch(url,params)
+    .then((response)=>response.json())
+    .then((data)=>{
 
-  let url = "http://localhost:80007api/user?id=";
+    // Mostrar mensaje de éxito o confirmación
+    console.log("Usuario eliminado exitosamente");
+    clearForm();  // Actualizar campos
+  })
 
-  let params = {
-    METHOD: "DELETE",
-    headers:{
-      "Content Type": "application json"
-    },
-    body:JSON.stringify(user),
-  }
-
-  console.log(user);
-
-  fetch(url,params).then((response)=>{
-
-    console.log("Usuario Eliminado")
-    console.log(response.json());
-
-    
-  });
+  .catch((error)=>{
+    console.log(error);
+  }); 
 
 }
 
-  
+//=============== LIMPIAR FORMULARIO =====================
 
+// function clearForm() {
+//   document.getElementById("id").value = "";
+//   document.getElementById("name").value = "";
+//   document.getElementById("last_name").value = "";
+//   document.getElementById("phone").value = "";
+//   document.getElementById("e_mail").value = "";
+//   document.getElementById("user_name").value = "";
+//   document.getElementById("password").value = "";
+// }
+
+function clearForm() {
+  var idElement = document.getElementById("id");
+  if (idElement) {
+    idElement.value = "";
+  }
+  var nameElement = document.getElementById("name");
+  if (nameElement) {
+    nameElement.value = "";
+  }
+  var lastNameElement = document.getElementById("last_name");
+  if (lastNameElement) {
+    lastNameElement.value = "";
+  }
+  var phoneElement = document.getElementById("phone");
+  if (phoneElement) {
+    phoneElement.value = "";
+  }
+  var emailElement = document.getElementById("e_mail");
+  if (emailElement) {
+    emailElement.value = "";
+  }
+  var usernameElement = document.getElementById("user_name");
+  if (usernameElement) {
+    usernameElement.value = "";
+  }
+  var passwordElement = document.getElementById("password");
+  if (passwordElement) {
+    passwordElement.value = "";
+  }
+}
