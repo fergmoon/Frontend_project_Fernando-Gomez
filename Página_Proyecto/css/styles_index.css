@@ -97,23 +97,36 @@ h1 {  /*texto usuarios*/
 
 h2 {  /*ADMINISTRACIÓN  -text-*/
     padding: 2%;
-    color: white;
+    color: rgba(14, 7, 233, 0.75);
     font-size: 2vw;
     font-family: 'Montserrat';
-    background-color: #666;  
+    background-color:transparent;  
     
 }
 
 
-.result h3 {
+.result h3 {  /*texto ID*/
     margin-top: 0;
-    font-size: 18px;
-    color: #333;
+    font-size: .75vw;
+    color: #121212;
 }
 
-.result p {
+.result {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    /* Otros estilos... */
+  }
+
+.result p {  /*textos registros*/
     margin: 0;
-    color: #666;
+    font-size: .75vw;
+    color: #5a5a5a;
+}
+
+span{
+    color: #5a5a5a;
+    font-size: 0.75vw;
 }
 
 .button-container {
