@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     return true;
   }
-
+}),
 
   function clearForm() {
     document.getElementById("username").value = "";
@@ -180,11 +180,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //=========Fin carrusel=========
 
-  let nameUser = document.getElementById("name");
-  let last_nameUser = document.getElementById("last_name");
-  let phoneUser = document.getElementById("phone");
-  let e_mailUser = document.getElementById("e_mail");
-  let user_nameUser = document.getElementById("user_name");
-  let passwordUser = document.getElementById("password");
 
-});
+
+
