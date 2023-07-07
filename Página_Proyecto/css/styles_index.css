@@ -12,82 +12,98 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
     background-image: url(./images/pexelsphoto1267438.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
 }
 
 .container {
     display: flex;
     flex-direction: row;
-    max-width: 40%;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.209);
-    border-radius: 10px;
+    float: left;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 55%;
+    background-color: rgba(219, 219, 219, 0.268);
+    border-radius: .5vw;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 2vw;
-    margin-left: 5%;
-    margin-top: 5%;
+    border-style:groove;   
+    align-items: center;
 
     
 }
 
+
+
 #login-form{
-    flex:1;
-    display: flex;    
+    display: flex;
+    width: 350px;    
+    height: auto;
     flex-direction: column;
+    border-style: dotted;
+    padding: 2%;
+    background-color:transparent;
+    z-index:10;  
+    border-style: groove;
+    margin-left: 1%;
 
 }
 
-h1 {
-    margin: 2%;
-    color: white;
-    font-size: 2vw;
-    font-family: 'Montserrat';
+.results-container {    
+    height: 390px; 
+    width:48%;   
+    border: 5px solid #ccc;
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: rgba(235, 235, 235, 0.9);
+    border-style:groove;
+    margin-left: 3%;
+    
+
 }
 
-input {
+input {  /*Campos*/
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: rgba(224, 224, 224, 0.744);
+    background-color: rgba(200, 200, 200, 0.709);
     align-self: center;
+    
+    
 }
 
-button {
+button {   /*Botón del login*/
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: rgba(76, 175, 80, 0.85);
-    color: white;
+    background-color: rgba(14, 179, 27, 0.85);
+    color: rgb(245, 244, 244);
     border: none;
     cursor: pointer;
     font-size: 1.25vw;
 }
 
-.results-container {
-    flex:1;
-    max-width: 20%;
-    margin-left: 50%;
-    margin-top: 1%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow-y: scroll; /* Agrega una barra de desplazamiento vertical*/
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    background-color: rgba(255, 255, 255, 0.9);
-
-
+h1 {  /*texto usuarios*/
+    margin: 2%;
+    color: rgb(15, 172, 25);
+    font-size: 2vw;
+    font-family: 'Montserrat';
 }
-.result {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+h2 {  /*ADMINISTRACIÓN  -text-*/
+    padding: 2%;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Montserrat';
+    background-color: #666;  
+    
 }
+
 
 .result h3 {
     margin-top: 0;
@@ -103,20 +119,32 @@ button {
 .button-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
+    width: 40%;
+    height: 5%;
+    margin-bottom: 5%;
+    
 }
 
-.button-Apis {
+.button-Apis {  /*Botones del CRUD*/
     display: inline-block;
-    width: 30%;
-    padding: 10px;
-    background-color: rgba(76, 175, 80, 0.85);
+    width: 15%;
+    height: 75%;
+    padding: 1%;
+    background-color: rgba(25, 131, 29, 0.85);
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 1.25vw;
+    font-size:.8vw;
 }
 
+.texto-prueba{
+    width: 100%;
+    height: 8%;
+    color:rgb(255, 255, 255);
+    margin-top:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(10, 10, 194);
+
+}
 
   
