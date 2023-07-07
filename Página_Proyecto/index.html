@@ -10,8 +10,9 @@
 
 <body class="background">
     <div class="container">
-        <h1>Login</h1>
+        
         <form id="login-form" action="">
+            <h1>Login</h1>
             <input type="text" id="id" placeholder="id Usuario" required>
             <input type="text" id="name" placeholder="Name" required>
             <input type="text" id="last_name" placeholder="Last name" required>
@@ -21,11 +22,12 @@
             <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
+        <div class="results-container">
+            <h2>Resultados de la Consulta</h2>
+            <div id="results"></div>
+        </div>
     </div>
-    <div class="results-container">
-        <h2>Resultados de la Consulta</h2>
-        <div id="results"></div>
-    </div>
+
     <div class="button-container">
         <input type="button" class="button-Apis" id="consultar" onclick="getUsers()" value="Consultar">
         <input type="button" class="button-Apis" id="actualizar" onclick="updateUser()" value="Actualizar">
