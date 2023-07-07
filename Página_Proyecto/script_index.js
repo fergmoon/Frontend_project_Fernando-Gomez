@@ -1,10 +1,10 @@
 console.log("Loading script_index...")
 
-
+document.addEventListener('DOMContentLoaded', function() {
 /*========== FORMULARIO INGRESO dIMwEBpAGE =================*/
 
 
-document.getElementById('login-form').addEventListener('submit', function (event) {
+document.getElementById('login').addEventListener('submit', function (event) {
   event.preventDefault(); // Evita el envío del formulario
 
   // Obtener los valores de los campos de entrada
@@ -278,32 +278,33 @@ function deleteUser() {
 // }
 
 function clearForm() {
-  var idElement = document.getElementById("id");
+  let idElement = document.getElementById("id");
   if (idElement) {
     idElement.value = "";
   }
-  var nameElement = document.getElementById("name");
+  let nameElement = document.getElementById("name");
   if (nameElement) {
     nameElement.value = "";
   }
-  var lastNameElement = document.getElementById("last_name");
+  let lastNameElement = document.getElementById("last_name");
   if (lastNameElement) {
     lastNameElement.value = "";
   }
-  var phoneElement = document.getElementById("phone");
+  let phoneElement = document.getElementById("phone");
   if (phoneElement) {
     phoneElement.value = "";
   }
-  var emailElement = document.getElementById("e_mail");
+  let emailElement = document.getElementById("e_mail");
   if (emailElement) {
     emailElement.value = "";
   }
-  var usernameElement = document.getElementById("user_name");
+  let usernameElement = document.getElementById("user_name");
   if (usernameElement) {
     usernameElement.value = "";
   }
-  var passwordElement = document.getElementById("password");
+  let passwordElement = document.getElementById("password");
   if (passwordElement) {
     passwordElement.value = "";
   }
 }
+});

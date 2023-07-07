@@ -11,7 +11,7 @@
 <body class="background">
     <div class="container">
         <h1>Login</h1>
-        <form id="login-form">
+        <form id="login-form" action="">
             <input type="text" id="id" placeholder="id Usuario" required>
             <input type="text" id="name" placeholder="Name" required>
             <input type="text" id="last_name" placeholder="Last name" required>
@@ -27,14 +27,14 @@
         <div id="results"></div>
     </div>
     <div class="button-container">
-        <input type="button" class="button-Apis" id="login" onclick="getUsers()" value="Consultar">
-        <input type="button" class="button-Apis" id="login" onclick="updateUser()" value="Actualizar">
-        <input type="button" class="button-Apis" id="login" onclick="getUser()" value="Búsqueda">
-        <input type="button" class="button-Apis" id="login" onclick="deleteUser()" value="Eliminar">
-        <input type="button" class="button-Apis" id="login" onclick="clearForm()" value="Limpiar Formulario">
+        <input type="button" class="button-Apis" id="consultar" onclick="getUsers()" value="Consultar">
+        <input type="button" class="button-Apis" id="actualizar" onclick="updateUser()" value="Actualizar">
+        <input type="button" class="button-Apis" id="busqueda" onclick="getUser()" value="Búsqueda">
+        <input type="button" class="button-Apis" id="eliminar" onclick="deleteUser()" value="Eliminar">
+        <input type="button" class="button-Apis" id="limpiar" onclick="clearForm()" value="Limpiar Formulario">
     </div>
 
-    <script src="./script_index.js"></script>
+    <script src="./script_index.js" defer></script>
 </body>
 
 </html>
