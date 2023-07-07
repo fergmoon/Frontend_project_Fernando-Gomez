@@ -12,7 +12,9 @@
     <h2>ADMINISTRACION</h2>
     <div class="container">        
         <form id="login-form" action="">
-            <h1>Usuarios</h1>
+            <div class="titulo-form">
+                <h1>Usuarios</h1>
+            </div>            
             <input type="text" id="id" placeholder="id Usuario" required>
             <input type="text" id="name" placeholder="Name" required>
             <input type="text" id="last_name" placeholder="Last name" required>
@@ -22,8 +24,10 @@
             <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>       
-        <div class="results-container">
-            <div class="texto-prueba">TOTAL REGISTROS</div> 
+        <div class="results-container" id="results-container">
+            <div class="texto-prueba">
+                <h4>TOTAL REGISTROS</h4>
+            </div> 
         </div>         
     </div>
     <br>

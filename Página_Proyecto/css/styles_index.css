@@ -28,12 +28,17 @@
     float: left;
     flex-wrap: wrap;
     width: 50%;
+    max-width: 800px;
     height: 55%;
+    max-height: 500px;
     background-color: rgba(219, 219, 219, 0.268);
     border-radius: .5vw;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     border-style:groove;   
     align-items: center;
+    overflow: auto; /* Agrega una barra de desplazamiento si el contenido excede el tamaño del contenedor */
+    
+
 
     
 }
@@ -88,11 +93,23 @@ button {   /*Botón del login*/
     font-size: 1.25vw;
 }
 
+.titulo-form{
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+
+
+}
+
 h1 {  /*texto usuarios*/
-    margin: 2%;
+    margin-left: 26%;
+    padding: 2%;
     color: rgb(15, 172, 25);
     font-size: 2vw;
     font-family: 'Montserrat';
+    
 }
 
 h2 {  /*ADMINISTRACIÓN  -text-*/
@@ -107,8 +124,16 @@ h2 {  /*ADMINISTRACIÓN  -text-*/
 
 .result h3 {  /*texto ID*/
     margin-top: 0;
-    font-size: .75vw;
+    font-size: .7vw;
     color: #121212;
+}
+
+h4{
+    color: rgb(240, 240, 240);
+    font-family:Arial, sans-serif;
+    font-weight: 300;
+    margin-left: 29%;
+    padding: 2%;
 }
 
 .result {

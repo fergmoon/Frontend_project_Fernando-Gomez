@@ -150,9 +150,14 @@ function getUsers() {
 
 //===============CONSULTAR UNICO USUARIO======================//
 
-function getUser() {
+function getUser() {  //Busqueda => por id de usuario
 
   let id = document.getElementById("id").value;
+
+  if(id === ""){
+    alert("Por favor ingrese un ID para realizar la búsqueda");
+    return;
+  }
 
   let url = "http://localhost:8000/api/user?id=" + id;
 
@@ -271,8 +276,12 @@ function deleteUser() {
 //   document.getElementById("password").value = "";
 // }
 
-function clearForm() {
+function clearForm() {  //Limpiar el formulario que contenga cualquier dato
  
+  let idElement = document.getElementById("id");
+  if (idElement) {
+    idElement.value = "";
+  }
   let nameElement = document.getElementById("name");
   if (nameElement) {
     nameElement.value = "";
@@ -297,5 +306,10 @@ function clearForm() {
   if (passwordElement) {
     passwordElement.value = "";
   }
+
+    // Limpiar el contenedor de resultados
+    let resultsContainer = document.getElementById("results-container");
+    resultsContainer.innerHTML = "";
+
 }
 
