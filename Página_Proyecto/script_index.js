@@ -1,30 +1,30 @@
 console.log("Loading script_index...")
 
 
-/*========== FORMULARIO INGRESO INDEX =================*/
+/*========== FORMULARIO INGRESO dIMwEBpAGE =================*/
 
 
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita el envío del formulario
-  
-    // Obtener los valores de los campos de entrada
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-  
-    // Realizar la validación de las credenciales
-    if (username === 'admin' && password === 'admin') {
-      // Redirige al usuario a la página de admin---Falta hacerla =(
-      
-      administrador
-      window.location.href = 'admin.html';   //Falta hacerla =(
-    } else {
-      // Redirige al usuario a la página de visitantes
-      window.location.href = 'DimWebpage.html';
-    }
-  });
+document.getElementById('login-form').addEventListener('submit', function (event) {
+  event.preventDefault(); // Evita el envío del formulario
+
+  // Obtener los valores de los campos de entrada
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+
+  // Realizar la validación de las credenciales
+  if (username === 'admin' && password === 'admin') {
+    // Redirige al usuario a la página de admin---Falta hacerla =(
+
+    administrador
+    window.location.href = 'admin.html';   //Falta hacerla =(
+  } else {
+    // Redirige al usuario a la página de visitantes
+    window.location.href = 'DimWebpage.html';
+  }
+});
 
 
-  /****************     APIs     ******************/
+/****************     APIs     ******************/
 
 function saveUser() {
 
@@ -87,95 +87,143 @@ function saveUser() {
 //===============CONSULTAR USUARIOS======================//
 
 function getUsers() {
-    
-    let url = "http://localhost:8000/api/users";
 
-    let params = {
+  let url = "http://localhost:8000/api/users";
+
+  let params = {
+    METHOD: "GET",
+    headers: {   //solo header. No body por que no se envían datos en la petición
+      "Content-Type": "application/json"
+    }
+  };
+
+  fetch(url, params)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data); //Mostrar en consola los resultados
+
+      let resultsContainer = document.querySelector('.results-container');
+      resultsContainer.innerHTML = ''; //Limpiar resultados anteriores
+
+      if (data.length === 0) {
+        alert('No existen registros para mostrar')
+      } else {
+
+        data.forEach(user => {
+          let resultDiv = document.createElement('div');
+          resultDiv.className = 'result';
+
+          let idHeading = document.createElement('h3');
+          idHeading.innerText = 'ID: ' + user.id;
+
+          let nameParagraph = document.createElement('p');
+          nameParagraph.innerText = 'Nombre: ' + user.name;
+
+          let lastNameParagraph = document.createElement('p');
+          lastNameParagraph.innerText = 'Apellido: ' + user.last_name;
+
+          let phoneParagraph = document.createElement('p');
+          phoneParagraph.innerText = 'Teléfono: ' + user.phone;
+
+          let emailParagraph = document.createElement('p');
+          emailParagraph.innerText = 'Email: ' + user.e_mail;
+
+          let usernameParagraph = document.createElement('p');
+          usernameParagraph.innerText = 'Nombre de usuario: ' + user.user_name;
+
+          let passwordParagraph = document.createElement('span');
+          passwordParagraph.innerText = 'Contraseña: ' +'*'.repeat(user.password.length);  //mostrar asteriscos en vez de password
+
+          resultDiv.appendChild(idHeading);
+          resultDiv.appendChild(nameParagraph);
+          resultDiv.appendChild(lastNameParagraph);
+          resultDiv.appendChild(phoneParagraph);
+          resultDiv.appendChild(emailParagraph);
+          resultDiv.appendChild(usernameParagraph);
+          resultDiv.appendChild(passwordParagraph);
+
+          resultsContainer.appendChild(resultDiv);
+        });
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+  return true;
+}
+
+
+//===============CONSULTAR UNICO USUARIO======================//
+
+function getUser() {
+
+  let id = document.getElementById("id").value;
+
+  let url = "http://localhost:8000/api/user?id=" + id;
+
+  let params = {
     METHOD: "GET",
     headers: {   //solo header. No body por que no se envían datos en la petición
       "Content-Type": "application json"
     },
   }
 
-  fetch(url, params).then((response) => {
+  fetch(url, params)
 
-    console.log(response);    
+    .then((response) => response.json())
 
-  });
+    .then((data) => {
 
-  return true;
-}
-
-//===============CONSULTAR UNICO USUARIO======================//
-
-function getUser() {
-
-    let id = document.getElementById("id").value;
-    
-    let url = "http://localhost:8000/api/user?id=" + id;
-
-    let params = {
-        METHOD: "GET",
-        headers: {   //solo header. No body por que no se envían datos en la petición
-        "Content-Type": "application json"
-        },        
-  }
-
-  fetch(url,params)
-  
-    .then((response) => response.json())    
-
-    .then((data)=>{
-
-        console.log(data);
-        document.getElementById("name").value = data.name;
-        document.getElementById("last_name").value = data.last_name;
-        document.getElementById("phone").value = data.phone;
-        document.getElementById("e_mail").value = data.e_mail;
-        document.getElementById("user_name").value = data.user_name;
-        document.getElementById("password").value = data.password;
+      console.log(data);
+      document.getElementById("name").value = data.name;
+      document.getElementById("last_name").value = data.last_name;
+      document.getElementById("phone").value = data.phone;
+      document.getElementById("e_mail").value = data.e_mail;
+      document.getElementById("user_name").value = data.user_name;
+      document.getElementById("password").value = data.password;
 
     })
-  .catch((error)=>{
+    .catch((error) => {
 
-    console.log(error);
-  });
+      console.log(error);
+    });
 
   return false;  // Evitar que el formulario se envíe y la página se recargue
 
-  }
+}
 
 
-  //===============ACTUALIZAR USUARIO======================//
+//===============ACTUALIZAR USUARIO======================//
 
-  function updateUser() {
+function updateUser() {
 
-    let id = document.getElementById("id").value;
-    let name = document.getElementById("name").value;
-    let lastname = document.getElementById("last_name").value;
-    let phone = document.getElementById("phone").value;
-    let e_mail = document.getElementById("e_mail").value;
-    let username = document.getElementById("user_name").value;
-    let password = document.getElementById("password").value;
+  let id = document.getElementById("id").value;
+  let name = document.getElementById("name").value;
+  let lastname = document.getElementById("last_name").value;
+  let phone = document.getElementById("phone").value;
+  let e_mail = document.getElementById("e_mail").value;
+  let username = document.getElementById("user_name").value;
+  let password = document.getElementById("password").value;
 
-    let url = "http://localhost:8000/api/user?id=" + id;
+  let url = "http://localhost:8000/api/user?id=" + id;
 
-    let params = {
-        method:"PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: name,
-            last_name: lastname,
-            phone: phone,
-            e_mail: e_mail,
-            user_name: username,
-            password:password,
-        })
-    };
+  let params = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name: name,
+      last_name: lastname,
+      phone: phone,
+      e_mail: e_mail,
+      user_name: username,
+      password: password,
+    })
+  };
 
-    fetch(url, params)
+  fetch(url, params)
     .then((response) => response.json())
     .then((data) => {
       // Actualizar campos del formulario con los datos recibidos
@@ -189,31 +237,31 @@ function getUser() {
     .catch((error) => {
       console.log(error);
     });
-  }
+}
 
 //===============ELIMINAR USUARIO======================//
 
-function deleteUser(){
+function deleteUser() {
 
-    let id = document.getElementById("id").value;
-    let url = 'http://localhost:8000/api/user?id=' + id;
+  let id = document.getElementById("id").value;
+  let url = 'http://localhost:8000/api/user?id=' + id;
 
-    let params = {
+  let params = {
     method: "DELETE",
-    };
-  
-  fetch(url,params)
-    .then((response)=>response.json())
-    .then((data)=>{
+  };
 
-    // Mostrar mensaje de éxito o confirmación
-    console.log("Usuario eliminado exitosamente");
-    clearForm();  // Actualizar campos
-  })
+  fetch(url, params)
+    .then((response) => response.json())
+    .then((data) => {
 
-  .catch((error)=>{
-    console.log(error);
-  }); 
+      // Mostrar mensaje de éxito o confirmación
+      console.log("Usuario eliminado exitosamente");
+      clearForm();  // Actualizar campos
+    })
+
+    .catch((error) => {
+      console.log(error);
+    });
 
 }
 
