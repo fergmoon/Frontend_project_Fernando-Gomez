@@ -272,10 +272,7 @@ function deleteUser() {
 // }
 
 function clearForm() {
-  let idElement = document.getElementById("id");
-  if (idElement) {
-    idElement.value = "";
-  }
+ 
   let nameElement = document.getElementById("name");
   if (nameElement) {
     nameElement.value = "";

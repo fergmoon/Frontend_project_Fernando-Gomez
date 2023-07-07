@@ -36,27 +36,39 @@ $(document).ready(function () {
 
 function saveUser() {
 
-  let nameUser = document.getElementById("name");
-  let last_nameUser = document.getElementById("last_name");
-  let phoneUser = document.getElementById("phone");
-  let e_mailUser = document.getElementById("e_mail");
-  let user_nameUser = document.getElementById("user_name");
-  let passwordUser = document.getElementById("password");
+  let nameUser = document.getElementById("name").value;
+  let last_nameUser = document.getElementById("last_name").value;
+  let phoneUser = document.getElementById("phone").value;
+  let e_mailUser = document.getElementById("e_mail").value;
+  let user_nameUser = document.getElementById("user_name").value;
+  let passwordUser = document.getElementById("password").value;
 
+  //Validar campos obligatorios
 
-  let user = {
-    name: nameUser.value,
-    last_name: last_nameUser.value,
-    phone: phoneUser.value,
-    e_mail: e_mailUser.value,
-    user_name: user_nameUser.value,
-    password: passwordUser.value
-  }
+  if (
+    nameUser === "" ||
+    last_nameUser === "" ||
+    phoneUser === "" ||
+    e_mailUser === "" ||
+    user_nameUser === "" ||
+    passwordUser === ""
+    ){
+      alert("Por favor complete todos los campos");
+      return;
+    }
+
+    let user = {
+      name: nameUser,
+      last_name: last_nameUser,
+      phone: phoneUser,
+      e_mail: e_mailUser,
+      user_name: user_nameUser,
+      password: passwordUser
+    }
 
   console.log(user);
 
   let url = "http://localhost:8000/api/user";
-
 
 
   fetch(url, {                        //url en postman
@@ -70,23 +82,20 @@ function saveUser() {
     console.log(response.json());
 
     if (response.status == 200) {
+      console.log("Creación exitosa de Usuario");
 
       alert("Creación Exitosa de Usuario");
 
     } else {
-
       alert("Error creando usuario");
-
     }
-
-
   }).then(result => {
 
     console.log(result);
   })
-
-
-  // alert("Creación de usuario")
+  .catch(error => {
+    console.log(error);
+  });
 
 
   return true;
@@ -94,8 +103,7 @@ function saveUser() {
 
 
 function clearForm() {
-  document.getElementById("username").value = "";
-  document.getElementById("password").value = "";
+
   document.getElementById("name").value = "";
   document.getElementById("last_name").value = "";
   document.getElementById("phone").value = "";
