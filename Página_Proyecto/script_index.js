@@ -1,11 +1,7 @@
 console.log("Loading script_index...")
 
-document.addEventListener('DOMContentLoaded', function() {
+
 /*========== FORMULARIO INGRESO dIMwEBpAGE =================*/
-
-
-document.getElementById('login').addEventListener('submit', function (event) {
-  event.preventDefault(); // Evita el envío del formulario
 
   // Obtener los valores de los campos de entrada
   var username = document.getElementById('username').value;
@@ -21,8 +17,6 @@ document.getElementById('login').addEventListener('submit', function (event) {
     // Redirige al usuario a la página de visitantes
     window.location.href = 'DimWebpage.html';
   }
-});
-
 
 /****************     APIs     ******************/
 
@@ -307,4 +301,4 @@ function clearForm() {
     passwordElement.value = "";
   }
 }
-});
+
