@@ -82,7 +82,7 @@ console.log("Loading script_index...")
 
   function getUsers() {
 
-    let url = "http://localhost:8000/api/users";
+    let url = "http://localhost:8000/api/user?id=";
 
     let params = {
       METHOD: "GET",
@@ -162,36 +162,38 @@ console.log("Loading script_index...")
     let url = "http://localhost:8000/api/user?id=" + id;
 
     let params = {
-      METHOD: "GET",
+      method: "GET",
       headers: {   //solo header. No body por que no se envían datos en la petición
-        "Content-Type": "application json"
+        "Content-Type": "application/json",
       },
-    }
+    };
 
     fetch(url, params)
 
-      .then((response) => response.json())
+    .then((response) => {
 
-      .then((data) => {
-
-        console.log(data);
-        document.getElementById("name").value = data.name;
-        document.getElementById("last_name").value = data.last_name;
-        document.getElementById("phone").value = data.phone;
-        document.getElementById("e_mail").value = data.e_mail;
-        document.getElementById("user_name").value = data.user_name;
-        document.getElementById("password").value = data.password;
-
-      })
-      .catch((error) => {
-
-        console.log(error);
-      });
-
-    return false;  // Evitar que el formulario se envíe y la página se recargue
-
-  }
-
+      if (response.status === 404) {
+        alert("No se encontró ningún registro con el ID proporcionado");
+        return;
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (!data) {
+        return;
+      }
+      console.log(data);
+      document.getElementById("name").value = data.name;
+      document.getElementById("last_name").value = data.last_name;
+      document.getElementById("phone").value = data.phone;
+      document.getElementById("e_mail").value = data.e_mail;
+      document.getElementById("user_name").value = data.user_name;
+      document.getElementById("password").value = data.password;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
   //===============ACTUALIZAR USUARIO======================//
 
@@ -204,6 +206,11 @@ console.log("Loading script_index...")
     let e_mail = document.getElementById("e_mail").value;
     let username = document.getElementById("user_name").value;
     let password = document.getElementById("password").value;
+
+    if(id === ""){
+      alert("Por favor ingrese un ID válido para realizar la actualización de un usuario.");
+      return;
+    }
 
     let url = "http://localhost:8000/api/user?id=" + id;
 
@@ -232,6 +239,9 @@ console.log("Loading script_index...")
 
         // Mostrar mensaje de éxito o confirmación
         console.log("Actualización exitosa");
+
+        // Mostrar mensaje de éxito o confirmación por alert
+        alert("El usuario se ha actualizado exitosamente");
       })
       .catch((error) => {
         console.log(error);
@@ -241,23 +251,36 @@ console.log("Loading script_index...")
   //===============ELIMINAR USUARIO======================//
 
   function deleteUser() {
-
     let id = document.getElementById("id").value;
+
+    if (id === ""){
+      alert("Por favor ingrese un ID válido para poder eliminar el registro");
+      return;
+    }
+
     let url = 'http://localhost:8000/api/user?id=' + id;
 
     let params = {
       method: "DELETE",
+      headers:{
+        "Content-Type": "application/json"
+      }
     };
 
     fetch(url, params)
-      .then((response) => response.json())
-      .then((data) => {
+      .then((response) =>{
 
-        // Mostrar mensaje de éxito o confirmación
-        console.log("Usuario eliminado exitosamente");
-        clearForm();  // Actualizar campos
+        if(response.status === 200){
+
+          // Mostrar mensaje de éxito o confirmación
+          console.log("Usuario eliminado exitosamente");
+          alert("El usuario se ha eliminado exitosamente");
+          clearForm();  // Actualizar campos     
+
+        }else{
+          alert("Error al eliminar el usuario")
+        }    
       })
-
       .catch((error) => {
         console.log(error);
       });
@@ -277,6 +300,17 @@ console.log("Loading script_index...")
   // }
 
   function clearForm() {  //Limpiar el formulario que contenga cualquier dato
+
+    let formFields = document.querySelectorAll("#login-form input");
+    let resultsContainer = document.querySelector(".results-container");
+
+    let hasFormData = Array.from(formFields).some((field)=>field.value !=="");
+    let hasResultsData = resultsContainer.innerHTML.trim() !=="";
+
+    if(!hasFormData && !hasResultsData){
+      alert("No hay datos para limpiar");
+      return;
+    }
 
     let idElement = document.getElementById("id");
     if (idElement) {
@@ -308,7 +342,7 @@ console.log("Loading script_index...")
     }
 
     // Limpiar el contenedor de resultados
-    let resultsContainer = document.getElementById("results-container");
+    // let resultsContainer = document.getElementById("results-container");
     resultsContainer.innerHTML = "";
 
   }
