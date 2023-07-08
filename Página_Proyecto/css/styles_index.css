@@ -100,12 +100,11 @@ button {   /*Botón del login*/
     align-self: center;
     width: 100%;
 
-
 }
 
 h1 {  /*texto usuarios*/
     margin-left: 26%;
-    padding: 2%;
+    padding: 1%;
     color: rgb(15, 172, 25);
     font-size: 2vw;
     font-family: 'Montserrat';
@@ -113,7 +112,7 @@ h1 {  /*texto usuarios*/
 }
 
 h2 {  /*ADMINISTRACIÓN  -text-*/
-    padding: 2%;
+    padding: 1%;
     color: rgba(14, 7, 233, 0.75);
     font-size: 2vw;
     font-family: 'Montserrat';
@@ -134,6 +133,11 @@ h4{
     font-weight: 300;
     margin-left: 29%;
     padding: 2%;
+}
+
+h5{
+    color: rgba(225, 225, 225, 0.5);
+    font-size: 2.5vw;
 }
 
 .result {
@@ -173,6 +177,8 @@ span{
     border: none;
     cursor: pointer;
     font-size:.8vw;
+    border-radius: 10vw;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.8); /*separación sombra*/
 }
 
 .texto-prueba{
@@ -185,4 +191,19 @@ span{
 
 }
 
+#let-me-in{
+    color: red;
+    background-color: lawngreen;
+    width: 10%;
+    height: auto;
+    margin-bottom: 2%;
+    border-radius: 10vw;
+    cursor:pointer;
+    text-decoration:underline;
+    align-items: center;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 900;
+    box-shadow: 0 5px 5px rgba(243, 243, 243, 0.8);
+
+}
   
